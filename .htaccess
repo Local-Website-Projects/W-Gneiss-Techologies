@@ -1,0 +1,17 @@
+ErrorDocument 404 https://gneiss.com/404.php
+
+RewriteEngine on
+
+RewriteRule ^Home index.php [NE,L]
+RewriteRule ^Login login.php [NE,L]
+RewriteRule ^Register register.php [NE,L]
+RewriteRule ^About about_us.php [NE,L]
+RewriteRule ^Services services.php [NE,L]
+RewriteRule ^Details_Services services_details.php [NE,L]
+RewriteRule ^Shop shop.php [NE,L]
+RewriteRule ^Blog blog.php [NE,L]
+RewriteRule ^Courses course.php [NE,L]
+RewriteRule ^Contact contact.php [NE,L]
+RewriteRule ^Project-Details project_details.php [NE,L]
+RewriteRule ^Details blog_details.php [NE,L]
+
