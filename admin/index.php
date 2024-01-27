@@ -1,3 +1,9 @@
+<?php
+session_start();
+include('include/dbConfig.php');
+$db_handle = new DBController();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -85,14 +91,8 @@
         </div>
     </div>
 </div>
-<script src="public/vendor/global/global.min.js" type="text/javascript"></script>
-<script src="public/vendor/bootstrap-select/dist/js/bootstrap-select.min.js" type="text/javascript"></script>
-<script src="public/vendor/chart.js/Chart.bundle.min.js" type="text/javascript"></script>
-<script src="public/vendor/owl-carousel/owl.carousel.js" type="text/javascript"></script>
-<script src="public/vendor/apexchart/apexchart.js" type="text/javascript"></script>
-<script src="public/js/dashboard/dashboard-1.js" type="text/javascript"></script>
-<script src="public/js/custom.min.js" type="text/javascript"></script>
-<script src="public/js/deznav-init.js" type="text/javascript"></script>
+
+<?php include ('include/js.php');?>
 </body>
 
 </html>

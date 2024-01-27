@@ -1,3 +1,9 @@
+<?php
+session_start();
+include('include/dbConfig.php');
+$db_handle = new DBController();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,11 +32,11 @@
             </div>
             <div class="card">
                 <div class="card-body">
-                    <form>
+                    <form action="insert.php" method="POST">
                         <div class="form-group">
                             <input type="text" class="form-control input-rounded" name="category_name" placeholder="Category Name">
                         </div>
-                        <button type="button" class="btn btn-primary">Submit</button>
+                        <button type="submit" name="add_category" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
             </div>
@@ -45,14 +51,7 @@
         </div>
     </div>
 </div>
-<script src="public/vendor/global/global.min.js" type="text/javascript"></script>
-<script src="public/vendor/bootstrap-select/dist/js/bootstrap-select.min.js" type="text/javascript"></script>
-<script src="public/vendor/chart.js/Chart.bundle.min.js" type="text/javascript"></script>
-<script src="public/vendor/owl-carousel/owl.carousel.js" type="text/javascript"></script>
-<script src="public/vendor/apexchart/apexchart.js" type="text/javascript"></script>
-<script src="public/js/dashboard/dashboard-1.js" type="text/javascript"></script>
-<script src="public/js/custom.min.js" type="text/javascript"></script>
-<script src="public/js/deznav-init.js" type="text/javascript"></script>
+<?php include ('include/js.php');?>
 </body>
 
 </html>
