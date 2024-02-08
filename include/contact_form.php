@@ -5,8 +5,8 @@
                 <div class="contact-one__info wow fadeInLeft" data-wow-delay="100ms">
                     <div class="contact-one__info__icon"><span class="icon-customer-service"></span></div>
                     <h3 class="contact-one__info__title">Let’s call together just <span>contact</span> line</h3>
-                    <p class="contact-one__info__text"><a href="tel:255225551">++255225551</a>, <a
-                            href="tel:6544144444">+6544144444</a></p>
+                    <p class="contact-one__info__text"><a href="tel:01521411273">+8801521411273</a>, <a
+                            href="tel:01705581992">+8801705581992</a></p>
                 </div>
             </div>
             <div class="col-lg-4">

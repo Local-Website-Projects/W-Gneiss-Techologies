@@ -417,14 +417,14 @@
                             <div class="cta-two__info__icon"><span class="icon-phone-call"></span></div>
                             <h4 class="cta-two__info__title">Call This Now</h4>
                             <p class="cta-two__info__text">
-                                <a href="tel:025461556695">+025461556695</a>
-                                <a href="tel:826542556455">+826542556455</a>
+                                <a href="tel:01521411273">+880 1521 411 273</a><br>
+                                <a href="tel:01705581992 ">+880 1705 581 992 </a>
                             </p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="cta-two__content">
-                            <h4 class="cta-two__content__title">Solution Company <a href="tel:025461556695">Call
+                            <h4 class="cta-two__content__title">Solution Company <a href="tel:01521411273">Call
                                     Now!</a></h4>
                             <p class="cta-two__content__text">We can provide you with a reliable<br> Please input an
                                 email address</p>
@@ -436,7 +436,7 @@
                         <div class="cta-two__image">
                             <img src="assets/images/resources/cta-2-2.png" alt="tolak">
                         </div>
-                        <a href="tel:025461556695" class="cta-two__call-text">Call Now</a>
+                        <a href="tel:01705581992" class="cta-two__call-text">Call Now</a>
                     </div>
                 </div>
             </div>

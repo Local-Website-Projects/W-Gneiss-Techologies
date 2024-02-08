@@ -36,11 +36,12 @@
                         <img src="assets/images/logo-light.png" width="184" alt="Tolak HTML Template">
                     </a>
                     <ul class="footer-widget__info">
-                        <li><span class="icofont-clock-time"></span>Open Hours of Government:<br> Mon - Fri: 8.00
+                        <li><span class="icofont-clock-time"></span>Open Hours:<br> Sat - Thus: 9.00
                             am. - 6.00 pm.
                         </li>
-                        <li><span class="icofont-location-pin"></span>13/A, Miranda Halim City .</li>
-                        <li><span class="icofont-phone"></span><a href="tel:09969569535">099 695 695 35</a></li>
+                        <li><span class="icofont-location-pin"></span>Mohammadnogor, Gollamary, Khulna</li>
+                        <li><span class="icofont-phone"></span><a href="tel:01521411273">+8801521411273</a></li>
+                        <li><span class="icofont-phone"></span><a href="tel:01705581992">+8801705581992</a></li>
                     </ul>
                     <div class="footer-widget__social">
                         <a href="https://facebook.com/">
@@ -69,11 +70,11 @@
                 <div class="footer-widget footer-widget--links">
                     <h2 class="footer-widget__title">Categories</h2><!-- /.footer-widget__title -->
                     <ul class="list-unstyled footer-widget__links">
-                        <li><a href="about.html">Why choose us</a></li>
-                        <li><a href="services.html">Our Service</a></li>
-                        <li><a href="reviews.html">Partners</a></li>
-                        <li><a href="contact.html">Core values</a></li>
-                        <li><a href="project.html">Our projects</a></li>
+                        <li><a href="#">Why choose us</a></li>
+                        <li><a href="#">Our Service</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Core values</a></li>
+                        <li><a href="#">Our projects</a></li>
                     </ul><!-- /.list-unstyled footer-widget__links -->
                 </div><!-- /.footer-widget -->
             </div><!-- /.col-md-6 -->

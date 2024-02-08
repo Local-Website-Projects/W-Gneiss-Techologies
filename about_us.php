@@ -78,7 +78,7 @@
                 <div class="col-lg-6 wow fadeInRight" data-wow-delay="200ms">
                     <div class="about-three__content">
                         <div class="sec-title-two text-left">
-                            <h6 class="sec-title-two__tagline"><span class="sec-title-two__tagline__left icofont-rounded-double-left"></span> Our About Now<span class="sec-title-two__tagline__right icofont-rounded-double-right"></span></h6><!-- /.sec-title-two__tagline -->
+                            <h6 class="sec-title-two__tagline"><span class="sec-title-two__tagline__left icofont-rounded-double-left"></span> About Us<span class="sec-title-two__tagline__right icofont-rounded-double-right"></span></h6><!-- /.sec-title-two__tagline -->
                             <h3 class="sec-title-two__title">About is Over 291+ Company Business Solution.</h3><!-- /.sec-title-two__title -->
                         </div><!-- /.sec-title-two -->
                         <p class="about-three__content__text">
@@ -193,9 +193,9 @@
                             <img src="assets/images/resources/cta-1-author-1.jpg" alt="tolak">
                             <img src="assets/images/resources/cta-1-author-2.jpg" alt="tolak">
                             <img src="assets/images/resources/cta-1-author-3.jpg" alt="tolak">
-                            <a class="cta-one__author__rm" href="contact.html">More <span class="fas fa-arrow-right"></span></a>
+                            <a class="cta-one__author__rm" href="Contact">More <span class="fas fa-arrow-right"></span></a>
                         </div>
-                        <p class="cta-one__content__text">29,0000 customers with our services <a href="contact.html">( Let’s Started )</a></p>
+                        <p class="cta-one__content__text">29,0000 customers with our services <a href="Contact">( Let’s Started )</a></p>
                     </div>
                 </div>
                 <div class="col-lg-7 wow fadeInRight" data-wow-delay="100ms">

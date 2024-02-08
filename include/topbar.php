@@ -4,11 +4,11 @@
             <ul class="list-unstyled topbar-one__info">
                 <li class="topbar-one__info__item">
                     <i class="fas fa-envelope topbar-one__info__icon"></i>
-                    <a href="mailto:demo@example.com">demo@example.com</a>
+                    <a href="mailto:gneisstechnologies@gmail.com">gneisstechnologies@gmail.com</a>
                 </li>
                 <li class="topbar-one__info__item">
                     <i class="fas fa-map-marker-alt topbar-one__info__icon"></i>
-                    <a href="https://www.google.com/maps">27, Dhaka London City, LOT</a>
+                    <a href="https://www.google.com/maps">Adiluzzaman Road, Mohammadnogor, Gollamary, Khulna</a>
                 </li>
             </ul><!-- /.list-unstyled topbar-one__info -->
             <ul class="topbar-one__links">

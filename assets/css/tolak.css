@@ -15443,6 +15443,7 @@ body.megamenu-popup-active .mobile-nav__content {
 .service-one__item__title {
   font-size: 22px;
   margin: 0 20px 8px;
+  text-transform: capitalize;
 }
 .service-one__item__title a {
   color: inherit;
@@ -15839,6 +15840,7 @@ body.megamenu-popup-active .mobile-nav__content {
 .service-details__text {
   line-height: 30px;
   margin: 0 0 17px;
+  text-align: justify;
 }
 .service-details__text span {
   color: var(--tolak-base, #3d72fc);
