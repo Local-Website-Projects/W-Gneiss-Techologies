@@ -52,7 +52,7 @@
             <div class="row gutter-y-30">
                 <div class="col-md-12 col-xl-7">
                     <div class="service-details__thumbnail">
-                        <img src="assets/images/resources/service-d-2.jpg" alt="tolak">
+                        <img src="assets/images/services/5.jpg" alt="tolak">
                     </div><!-- /.service-details__thumbnail -->
                 </div><!-- /.col-md-12 col-lg-8 -->
                 <div class="col-md-12 col-xl-5">
