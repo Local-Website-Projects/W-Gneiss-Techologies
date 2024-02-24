@@ -39,7 +39,7 @@
                         <li><span class="icofont-clock-time"></span>Open Hours:<br> Sat - Thus: 9.00
                             am. - 6.00 pm.
                         </li>
-                        <li><span class="icofont-location-pin"></span>Mohammadnogor, Gollamary, Khulna</li>
+                        <li><span class="icofont-location-pin"></span>500/1 Mohammadnogor, Gollamary, Khulna</li>
                         <li><span class="icofont-phone"></span><a href="tel:01521411273">+8801521411273</a></li>
                         <li><span class="icofont-phone"></span><a href="tel:01705581992">+8801705581992</a></li>
                     </ul>

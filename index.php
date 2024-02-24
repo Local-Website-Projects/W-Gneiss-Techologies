@@ -191,7 +191,7 @@
                         <div class="feature-one__item__top-ball"><img src="assets/images/shapes/feature-1-ball.png"
                                                                       alt="tolak"></div>
                         <div class="feature-one__item__icon">
-                            <span class="icon-social-care"></span>
+                            <span class="icon-customer-service"></span>
                         </div>
                         <h4 class="feature-one__item__title">Service</h4>
                         <p class="feature-one__item__text">we are offer customizable solutions designed to meet your
@@ -205,7 +205,7 @@
                         <div class="feature-one__item__top-ball"><img src="assets/images/shapes/feature-1-ball.png"
                                                                       alt="tolak"></div>
                         <div class="feature-one__item__icon">
-                            <span class="icon-note-pad"></span>
+                            <span class="icon-shopping-cart"></span>
                         </div>
                         <h4 class="feature-one__item__title">Shop</h4>
                         <p class="feature-one__item__text">Explore our curated collection of premium. products to
@@ -219,7 +219,7 @@
                         <div class="feature-one__item__top-ball"><img src="assets/images/shapes/feature-1-ball.png"
                                                                       alt="tolak"></div>
                         <div class="feature-one__item__icon">
-                            <span class="icon-advertisement"></span>
+                            <span class="icon-check-mark"></span>
                         </div>
                         <h4 class="feature-one__item__title">Courses</h4>
                         <p class="feature-one__item__text">Empower Your Future with Cutting-Edge Electronics: Enroll in
@@ -233,7 +233,7 @@
                         <div class="feature-one__item__top-ball"><img src="assets/images/shapes/feature-1-ball.png"
                                                                       alt="tolak"></div>
                         <div class="feature-one__item__icon">
-                            <span class="icon-trophy"></span>
+                            <span class="icon-advertisement"></span>
                         </div>
                         <h4 class="feature-one__item__title">Blog</h4>
                         <p class="feature-one__item__text">Unlock the doors to knowledge with our educational blog

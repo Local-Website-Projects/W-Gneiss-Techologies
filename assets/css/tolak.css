@@ -17224,3 +17224,13 @@ body.boxed-wrapper .cta-one__bg__shape {
   transform: scale(1);
 }
 /*# sourceMappingURL=tolak.css.map */
+.feature-one__item {
+  position: relative;
+}
+
+.feature-one__item__year {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}

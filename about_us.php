@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Blank - Gneiss technology</title>
+    <title>About - Gneiss technology</title>
     <meta name="description" content=""/>
     <meta name="keywords" content=""/>
     <?php include('include/css.php'); ?>
@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="about-three__fact count-box">
                                     <div class="about-three__fact__icon"><i class="icon-check-mark"></i></div>
-                                    <h3 class="about-three__fact__count"><span class="count-text" data-stop="1283" data-speed="1500"></span>k+</h3><!-- /.about-three__fact__number -->
+                                    <h3 class="about-three__fact__count"><span class="count-text" data-stop="128" data-speed="1500"></span>+</h3><!-- /.about-three__fact__number -->
                                     <p class="about-three__fact__text">Complete Project</p><!-- /.about-three__fact__title -->
                                 </div><!-- /.about-three__fact -->
                             </div>
@@ -79,26 +79,27 @@
                     <div class="about-three__content">
                         <div class="sec-title-two text-left">
                             <h6 class="sec-title-two__tagline"><span class="sec-title-two__tagline__left icofont-rounded-double-left"></span> About Us<span class="sec-title-two__tagline__right icofont-rounded-double-right"></span></h6><!-- /.sec-title-two__tagline -->
-                            <h3 class="sec-title-two__title">About is Over 291+ Company Business Solution.</h3><!-- /.sec-title-two__title -->
+                            <h3 class="sec-title-two__title">Gneiss Technology: Pioneering Tomorrow's Connectivity</h3><!-- /.sec-title-two__title -->
                         </div><!-- /.sec-title-two -->
                         <p class="about-three__content__text">
-                            Business tailored it design, management & support services<br> business agency elit, sed do eiusmod tempor.
+                            At Gneiss Technology, we specialize in cutting-edge circuit design solutions, pushing the
+                            boundaries of technological innovation.
                         </p>
                         <div class="about-three__content__bar"></div>
                         <div class="row">
                             <div class="col-md-5">
                                 <ul class="about-three__content__list">
-                                    <li>Company and Research</li>
-                                    <li>Business and research</li>
+                                    <li>Circuit Innovate</li>
+                                    <li>Tech Forge</li>
                                 </ul>
                             </div>
                             <div class="col-md-7">
                                 <div class="about-three__content__skill">
                                     <div class="progress-box">
                                         <div class="graph-outer">
-                                            <input type="text" class="dial" data-fgColor="#3d72fc" data-bgColor="#c8c8c8" data-width="60" data-height="60" data-linecap="normal" value="45">
+                                            <input type="text" class="dial" data-fgColor="#3d72fc" data-bgColor="#c8c8c8" data-width="60" data-height="60" data-linecap="normal" value="80">
                                             <div class="inner-text count-box">
-                                                <span class="count-text" data-stop="45" data-speed="2000"></span><span class="count-Parsent">%</span>
+                                                <span class="count-text" data-stop="80" data-speed="2000"></span><span class="count-Parsent">%</span>
                                             </div>
                                         </div>
                                     </div>
@@ -134,45 +135,7 @@
         </div><!-- /.container -->
     </section>
     <!-- /.about-three -->
-
-    <section class="funfact-two">
-        <div class="container">
-            <ul class="list-unstyled funfact-two__list">
-                <li class="funfact-two__item count-box">
-                    <div class="funfact-two__icon"><i class="icon-briefing"></i></div><!-- /.funfact-two__icon -->
-                    <div class="funfact-two__content">
-                        <h3 class="funfact-two__count"><span class="count-text" data-stop="426" data-speed="1500"></span> k+</h3>
-                        <!-- /.funfact-two__count -->
-                        <p class="funfact-two__text">Completed Project</p><!-- /.funfact-two__text -->
-                    </div><!-- /.funfact-two__content -->
-                </li><!-- /.funfact-two__item -->
-                <li class="funfact-two__item count-box">
-                    <div class="funfact-two__icon"><i class="icon-ancestors"></i></div><!-- /.funfact-two__icon -->
-                    <div class="funfact-two__content">
-                        <h3 class="funfact-two__count"><span class="count-text" data-stop="1425" data-speed="1500"></span> +</h3>
-                        <!-- /.funfact-two__count -->
-                        <p class="funfact-two__text">Happy Clients</p><!-- /.funfact-two__text -->
-                    </div><!-- /.funfact-two__content -->
-                </li><!-- /.funfact-two__item -->
-                <li class="funfact-two__item count-box">
-                    <div class="funfact-two__icon"><i class="icon-admin"></i></div><!-- /.funfact-two__icon -->
-                    <div class="funfact-two__content">
-                        <h3 class="funfact-two__count"><span class="count-text" data-stop="750" data-speed="1500"></span> +</h3>
-                        <!-- /.funfact-two__count -->
-                        <p class="funfact-two__text">Business Partners</p><!-- /.funfact-two__text -->
-                    </div><!-- /.funfact-two__content -->
-                </li><!-- /.funfact-two__item -->
-                <li class="funfact-two__item count-box">
-                    <div class="funfact-two__icon"><i class="icon-trophy"></i></div><!-- /.funfact-two__icon -->
-                    <div class="funfact-two__content">
-                        <h3 class="funfact-two__count"><span class="count-text" data-stop="884" data-speed="1500"></span> k+</h3>
-                        <!-- /.funfact-two__count -->
-                        <p class="funfact-two__text">Award Win</p><!-- /.funfact-two__text -->
-                    </div><!-- /.funfact-two__content -->
-                </li><!-- /.funfact-two__item -->
-            </ul><!-- /.list-unstyled funfact-two__list -->
-        </div><!-- /.container -->
-    </section>
+    <?php include ('include/funfact.php');?>
     <!-- /.funfact-two -->
 
     <!-- CTA Start -->
@@ -186,16 +149,12 @@
                     <div class="cta-one__content">
                         <div class="cta-one__box">
                             <div class="cta-one__box__icon"><span class="icon-best-price"></span></div>
-                            <h3 class="cta-one__box__title">Solution System Design</h3>
-                            <p class="cta-one__box__text">Every team has a culture and set of ct ations that have either been aed orsve naturally evolved.</p>
+                            <h3 class="cta-one__box__title">Aeroponic Gardening (Ongoing Project)</h3>
+                            <p class="cta-one__box__text">Gneiss Technologies is a growing tech company, is embarking on an exciting journey into the realm of aeroponics farming.</p>
                         </div>
-                        <div class="cta-one__author">
-                            <img src="assets/images/resources/cta-1-author-1.jpg" alt="tolak">
-                            <img src="assets/images/resources/cta-1-author-2.jpg" alt="tolak">
-                            <img src="assets/images/resources/cta-1-author-3.jpg" alt="tolak">
-                            <a class="cta-one__author__rm" href="Contact">More <span class="fas fa-arrow-right"></span></a>
-                        </div>
-                        <p class="cta-one__content__text">29,0000 customers with our services <a href="Contact">( Let’s Started )</a></p>
+                        <p class="cta-one__content__text">We are lookout for a passionate team who are eager to join us
+                            <a href="Contact">(
+                                Join Us )</a></p>
                     </div>
                 </div>
                 <div class="col-lg-7 wow fadeInRight" data-wow-delay="100ms">

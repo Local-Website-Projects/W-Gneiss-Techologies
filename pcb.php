@@ -62,7 +62,7 @@
                             <li><a href="Electronic-Hardware-Design">Electronic Hardware Design</a></li>
                             <li><a href="Printed-Circuit-Board-Design">Printed Circuit Board Design</a></li>
                             <li><a href="PCB-Manufacturing-Assembly">PCB Manufacturing Assembly</a></li>
-                            <li><a href="Customize-Circuit-Designing">Customize Circuit Designing</a></li>
+                            
                             <li><a href="Interior-Design">Interior Design</a></li>
                             <li><a href="Household-Decoration-Protection">Household Decoration Protection</a></li>
                             <li><a href="IoT-Home-Automation">IoT Home Automation</a></li>
@@ -107,48 +107,8 @@
         </div><!-- /.container -->
     </section><!-- /.service-details -->
 
-    <section class="funfact-two funfact-two--service-details">
-        <div class="container">
-            <ul class="list-unstyled funfact-two__list">
-                <li class="funfact-two__item count-box">
-                    <div class="funfact-two__icon"><i class="icon-briefing"></i></div><!-- /.funfact-two__icon -->
-                    <div class="funfact-two__content">
-                        <h3 class="funfact-two__count"><span class="count-text" data-stop="426"
-                                                             data-speed="1500"></span> k+</h3>
-                        <!-- /.funfact-two__count -->
-                        <p class="funfact-two__text">Completed Project</p><!-- /.funfact-two__text -->
-                    </div><!-- /.funfact-two__content -->
-                </li><!-- /.funfact-two__item -->
-                <li class="funfact-two__item count-box">
-                    <div class="funfact-two__icon"><i class="icon-ancestors"></i></div><!-- /.funfact-two__icon -->
-                    <div class="funfact-two__content">
-                        <h3 class="funfact-two__count"><span class="count-text" data-stop="1425"
-                                                             data-speed="1500"></span> +</h3>
-                        <!-- /.funfact-two__count -->
-                        <p class="funfact-two__text">Happy Clients</p><!-- /.funfact-two__text -->
-                    </div><!-- /.funfact-two__content -->
-                </li><!-- /.funfact-two__item -->
-                <li class="funfact-two__item count-box">
-                    <div class="funfact-two__icon"><i class="icon-admin"></i></div><!-- /.funfact-two__icon -->
-                    <div class="funfact-two__content">
-                        <h3 class="funfact-two__count"><span class="count-text" data-stop="750"
-                                                             data-speed="1500"></span> +</h3>
-                        <!-- /.funfact-two__count -->
-                        <p class="funfact-two__text">Business Partners</p><!-- /.funfact-two__text -->
-                    </div><!-- /.funfact-two__content -->
-                </li><!-- /.funfact-two__item -->
-                <li class="funfact-two__item count-box">
-                    <div class="funfact-two__icon"><i class="icon-trophy"></i></div><!-- /.funfact-two__icon -->
-                    <div class="funfact-two__content">
-                        <h3 class="funfact-two__count"><span class="count-text" data-stop="884"
-                                                             data-speed="1500"></span> k+</h3>
-                        <!-- /.funfact-two__count -->
-                        <p class="funfact-two__text">Award Win</p><!-- /.funfact-two__text -->
-                    </div><!-- /.funfact-two__content -->
-                </li><!-- /.funfact-two__item -->
-            </ul><!-- /.list-unstyled funfact-two__list -->
-        </div><!-- /.container -->
-    </section><!-- /.funfact-two -->
+    <?php include ('include/funfact.php');?>
+    <!-- /.funfact-two -->
 
     <?php include('include/footer.php'); ?>
     <!-- /.main-footer -->

@@ -8,7 +8,7 @@
                 </li>
                 <li class="topbar-one__info__item">
                     <i class="fas fa-map-marker-alt topbar-one__info__icon"></i>
-                    <a href="https://www.google.com/maps">Adiluzzaman Road, Mohammadnogor, Gollamary, Khulna</a>
+                    <a href="https://www.google.com/maps">500/1 Adiluzzaman Road, Mohammadnogor, Gollamary, Khulna</a>
                 </li>
             </ul><!-- /.list-unstyled topbar-one__info -->
             <ul class="topbar-one__links">

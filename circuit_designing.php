@@ -62,7 +62,7 @@
                             <li><a href="Electronic-Hardware-Design">Electronic Hardware Design</a></li>
                             <li><a href="Printed-Circuit-Board-Design">Printed Circuit Board Design</a></li>
                             <li><a href="PCB-Manufacturing-Assembly">PCB Manufacturing Assembly</a></li>
-                            <li><a href="Customize-Circuit-Designing">Customize Circuit Designing</a></li>
+                            
                             <li><a href="Interior-Design">Interior Design</a></li>
                             <li><a href="Household-Decoration-Protection">Household Decoration Protection</a></li>
                             <li><a href="IoT-Home-Automation">IoT Home Automation</a></li>
