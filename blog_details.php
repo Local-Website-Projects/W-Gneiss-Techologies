@@ -1,3 +1,18 @@
+<?php
+session_start();
+include('admin/include/dbConfig.php');
+$db_handle = new DBController();
+if(isset($_GET['id'])){
+    $fetch_blog_details = $db_handle->runQuery("select * from blog where blog_id = {$_GET['id']}");
+}
+else{
+    echo "
+    <script>
+    window.location.href = 'Home';
+</script>
+    ";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,31 +70,23 @@
                 <div class="col-lg-8">
                     <div class="blog-details__content">
                         <div class="blog-details__image">
-                            <img src="assets/images/blog/blog-details-1.jpg" alt="tolak">
+                            <img src="admin/<?php echo $fetch_blog_details[0]['file'];?>" alt="blog">
                         </div><!-- /.blog-details__image -->
                         <div class="blog-details__meta">
                             <div class="blog-details__meta__date">
-                                <a href="#">Gneiss Technology</a> / Jun 4, 2023
+                                <?php
+                                $date = date_format(new DateTime($fetch_blog_details[0]['date']), 'd');
+                                $month = date_format(new DateTime($fetch_blog_details[0]['date']), 'M');
+                                $year = date_format(new DateTime($fetch_blog_details[0]['date']), 'Y');
+                                ?>
+                                <a href="Home">Gneiss Technology</a> / <?php echo $month .' '. $date .', '.$year;?>
                             </div>
                         </div><!-- /.list-unstyled blog-details__meta -->
                         <h3 class="blog-details__title">
-                            Business solution is a leading provider of software development, software outsourcing services programming service.
+                            <?php echo $fetch_blog_details[0]['title'];?>
                         </h3><!-- /.blog-details__title -->
                         <p class="blog-details__text">
-                            There are many variations of passages agency we have covered many special events such as
-                            fireworks, fairs, parades, races, walks, a Lorem Ipsum Fasts injecte dedicated product design
-                            team can help you achieve your business goals. Whether you need to craft an idea for a
-                            completely new product or elevate the quality of an existing solution, we’ll help you to
-                            create a product that is laser targeted to your users’ needs and business results
-                        </p><!-- /.blog-details__text -->
-                        <p class="blog-details__text">
-                            There are many variations of passages agency we have covered many special events such as
-                            fireworks, fairs, parades, races, walks, a Lorem Ipsum .
-                        </p><!-- /.blog-details__text -->
-                        <p class="blog-details__text">
-                            There are many variations of passages agency we have covered many special events such as
-                            fireworks, fairs, parades, races, walks, a Lorem Ipsumpassages agency we have covered many
-                            fireworks, fairs, parades, races, walks, a Lorem Ipsum Fasts injecte.
+                            <?php echo $fetch_blog_details[0]['description'];?>
                         </p><!-- /.blog-details__text -->
                     </div><!-- /.blog-details -->
                 </div><!-- /.col-lg-8 -->

@@ -1,3 +1,9 @@
+<?php
+session_start();
+include('admin/include/dbConfig.php');
+$db_handle = new DBController();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,150 +58,43 @@
     <section class="blog-three">
         <div class="container">
             <div class="row gutter-y-30">
+                <?php
+                $fetch_blog = $db_handle->runQuery("select * from blog order by blog_id desc limit 8");
+                $no_fetch_blog = $db_handle->numRows("select * from blog order by blog_id desc limit 8");
+                for ($i = 0; $i < $no_fetch_blog; $i++) {
+                    ?>
                 <div class="col-md-6 col-lg-4">
                     <div class="blog-card-three wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='00ms'>
                         <div class="blog-card-three__image">
-                            <img src="assets/images/blog/blog-3-1.png" alt="Solution This Business For is Marketing Blog">
-                            <img src="assets/images/blog/blog-3-1.png" alt="Solution This Business For is Marketing Blog">
+                            <img src="admin/<?php echo $fetch_blog[$i]['file'];?>" alt="Blog">
+                            <img src="admin/<?php echo $fetch_blog[$i]['file'];?>" alt="Blog">
                             <div class="blog-card-three__date">
-                                <span>15</span>
-                                Jun
-                                <div class="blog-card-three__date__year">2023</div>
+                                <?php
+                                $date = date_format(new DateTime($fetch_blog[$i]['date']), 'd');
+                                $month = date_format(new DateTime($fetch_blog[$i]['date']), 'M');
+                                $year = date_format(new DateTime($fetch_blog[$i]['date']), 'Y');
+                                ?>
+                                <span><?php echo $date;?></span>
+                                <?php echo $month;?>
+                                <div class="blog-card-three__date__year"><?php echo $year;?></div>
                             </div><!-- /.blog-card-three__date -->
-                            <a href="Details" class="blog-card-three__image__link"><i class="icon-right-arrow"></i><span class="sr-only">Solution This Business For is Marketing Blog</span>
+                            <a href="Details" class="blog-card-three__image__link"><i class="icon-right-arrow"></i><span class="sr-only"><?php echo $fetch_blog[$i]['title'];?></span>
                                 <!-- /.sr-only --></a>
                         </div><!-- /.blog-card-three__image -->
                         <div class="blog-card-three__content">
-                            <h3 class="blog-card-three__title"><a href="Details">Solution This Business For is Marketing Blog</a></h3><!-- /.blog-card-three__title -->
-                            <p class="blog-card-three__text">We business standard chunk ofI nibh vitae molestie id sed exthe.</p><!-- /.blog-card-three__text -->
+                            <h3 class="blog-card-three__title"><a href="Details?id=<?php echo $fetch_blog[$i]['blog_id'];?>"><?php echo $fetch_blog[$i]['title'];?></a></h3><!-- /.blog-card-three__title -->
+                            <p class="blog-card-three__text"><?php echo substr($fetch_blog[$i]['description'],0, 100);?></p><!-- /.blog-card-three__text -->
                             <div class="blog-card-three__meta">
                                 <div class="blog-card-three__meta__author">
-                                    <img src="assets/images/blog/blog-2-author.png" alt="tolak">Admin:<a href="Details">Mera</a>
+                                    Admin:<a href="Home">Gneiss Technology</a>
                                 </div>
                             </div>
                         </div><!-- /.blog-card-three__content -->
                     </div><!-- /.blog-card-three -->
                 </div><!-- /.col-md-6 col-lg-4 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="blog-card-three wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
-                        <div class="blog-card-three__image">
-                            <img src="assets/images/blog/blog-3-2.png" alt="Business Rules of Running to Web Solution">
-                            <img src="assets/images/blog/blog-3-2.png" alt="Business Rules of Running to Web Solution">
-                            <div class="blog-card-three__date">
-                                <span>19</span>
-                                Jun
-                                <div class="blog-card-three__date__year">2023</div>
-                            </div><!-- /.blog-card-three__date -->
-                            <a href="Details" class="blog-card-three__image__link"><i class="icon-right-arrow"></i><span class="sr-only">Business Rules of Running to Web Solution</span>
-                                <!-- /.sr-only --></a>
-                        </div><!-- /.blog-card-three__image -->
-                        <div class="blog-card-three__content">
-                            <h3 class="blog-card-three__title"><a href="Details">Business Rules of Running to Web Solution</a></h3><!-- /.blog-card-three__title -->
-                            <p class="blog-card-three__text">We business standard chunk ofI nibh vitae molestie id sed exthe.</p><!-- /.blog-card-three__text -->
-                            <div class="blog-card-three__meta">
-                                <div class="blog-card-three__meta__author">
-                                    <img src="assets/images/blog/blog-2-author.png" alt="tolak">Admin:<a href="Details">Mera</a>
-                                </div>
-                            </div>
-                        </div><!-- /.blog-card-three__content -->
-                    </div><!-- /.blog-card-three -->
-                </div><!-- /.col-md-6 col-lg-4 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="blog-card-three wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='200ms'>
-                        <div class="blog-card-three__image">
-                            <img src="assets/images/blog/blog-3-3.png" alt="We Should be Descriptive This Business">
-                            <img src="assets/images/blog/blog-3-3.png" alt="We Should be Descriptive This Business">
-                            <div class="blog-card-three__date">
-                                <span>29</span>
-                                Jun
-                                <div class="blog-card-three__date__year">2023</div>
-                            </div><!-- /.blog-card-three__date -->
-                            <a href="Details" class="blog-card-three__image__link"><i class="icon-right-arrow"></i><span class="sr-only">We Should be Descriptive This Business</span>
-                                <!-- /.sr-only --></a>
-                        </div><!-- /.blog-card-three__image -->
-                        <div class="blog-card-three__content">
-                            <h3 class="blog-card-three__title"><a href="Details">We Should be Descriptive This Business</a></h3><!-- /.blog-card-three__title -->
-                            <p class="blog-card-three__text">We business standard chunk ofI nibh vitae molestie id sed exthe.</p><!-- /.blog-card-three__text -->
-                            <div class="blog-card-three__meta">
-                                <div class="blog-card-three__meta__author">
-                                    <img src="assets/images/blog/blog-2-author.png" alt="tolak">Admin:<a href="Details">Mera</a>
-                                </div>
-                            </div>
-                        </div><!-- /.blog-card-three__content -->
-                    </div><!-- /.blog-card-three -->
-                </div><!-- /.col-md-6 col-lg-4 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="blog-card-three wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='300ms'>
-                        <div class="blog-card-three__image">
-                            <img src="assets/images/blog/blog-3-4.png" alt="We Are Business For is call Marketing Blog">
-                            <img src="assets/images/blog/blog-3-4.png" alt="We Are Business For is call Marketing Blog">
-                            <div class="blog-card-three__date">
-                                <span>15</span>
-                                Jun
-                                <div class="blog-card-three__date__year">2023</div>
-                            </div><!-- /.blog-card-three__date -->
-                            <a href="Details" class="blog-card-three__image__link"><i class="icon-right-arrow"></i><span class="sr-only">We Are Business For is call Marketing Blog</span>
-                                <!-- /.sr-only --></a>
-                        </div><!-- /.blog-card-three__image -->
-                        <div class="blog-card-three__content">
-                            <h3 class="blog-card-three__title"><a href="Details">We Are Business For is call Marketing Blog</a></h3><!-- /.blog-card-three__title -->
-                            <p class="blog-card-three__text">We business standard chunk ofI nibh vitae molestie id sed exthe.</p><!-- /.blog-card-three__text -->
-                            <div class="blog-card-three__meta">
-                                <div class="blog-card-three__meta__author">
-                                    <img src="assets/images/blog/blog-2-author.png" alt="tolak">Admin:<a href="Details">Mera</a>
-                                </div>
-                            </div>
-                        </div><!-- /.blog-card-three__content -->
-                    </div><!-- /.blog-card-three -->
-                </div><!-- /.col-md-6 col-lg-4 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="blog-card-three wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='400ms'>
-                        <div class="blog-card-three__image">
-                            <img src="assets/images/blog/blog-3-5.png" alt="Business Shold Descriptive Solution Blog">
-                            <img src="assets/images/blog/blog-3-5.png" alt="Business Shold Descriptive Solution Blog">
-                            <div class="blog-card-three__date">
-                                <span>19</span>
-                                Jun
-                                <div class="blog-card-three__date__year">2023</div>
-                            </div><!-- /.blog-card-three__date -->
-                            <a href="Details" class="blog-card-three__image__link"><i class="icon-right-arrow"></i><span class="sr-only">Business Shold Descriptive Solution Blog</span>
-                                <!-- /.sr-only --></a>
-                        </div><!-- /.blog-card-three__image -->
-                        <div class="blog-card-three__content">
-                            <h3 class="blog-card-three__title"><a href="Details">Business Shold Descriptive Solution Blog</a></h3><!-- /.blog-card-three__title -->
-                            <p class="blog-card-three__text">We business standard chunk ofI nibh vitae molestie id sed exthe.</p><!-- /.blog-card-three__text -->
-                            <div class="blog-card-three__meta">
-                                <div class="blog-card-three__meta__author">
-                                    <img src="assets/images/blog/blog-2-author.png" alt="tolak">Admin:<a href="Details">Mera</a>
-                                </div>
-                            </div>
-                        </div><!-- /.blog-card-three__content -->
-                    </div><!-- /.blog-card-three -->
-                </div><!-- /.col-md-6 col-lg-4 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="blog-card-three wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='500ms'>
-                        <div class="blog-card-three__image">
-                            <img src="assets/images/blog/blog-3-6.png" alt="Marketing Business Peratan This Business">
-                            <img src="assets/images/blog/blog-3-6.png" alt="Marketing Business Peratan This Business">
-                            <div class="blog-card-three__date">
-                                <span>29</span>
-                                Jun
-                                <div class="blog-card-three__date__year">2023</div>
-                            </div><!-- /.blog-card-three__date -->
-                            <a href="Details" class="blog-card-three__image__link"><i class="icon-right-arrow"></i><span class="sr-only">Marketing Business Peratan This Business</span>
-                                <!-- /.sr-only --></a>
-                        </div><!-- /.blog-card-three__image -->
-                        <div class="blog-card-three__content">
-                            <h3 class="blog-card-three__title"><a href="Details">Marketing Business Peratan This Business</a></h3><!-- /.blog-card-three__title -->
-                            <p class="blog-card-three__text">We business standard chunk ofI nibh vitae molestie id sed exthe.</p><!-- /.blog-card-three__text -->
-                            <div class="blog-card-three__meta">
-                                <div class="blog-card-three__meta__author">
-                                    <img src="assets/images/blog/blog-2-author.png" alt="tolak">Admin:<a href="Details">Mera</a>
-                                </div>
-                            </div>
-                        </div><!-- /.blog-card-three__content -->
-                    </div><!-- /.blog-card-three -->
-                </div><!-- /.col-md-6 col-lg-4 -->
+                    <?php
+                }
+                ?>
             </div><!-- /.row -->
         </div><!-- /.container -->
     </section>

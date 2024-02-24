@@ -10,3 +10,5 @@
 <script src="public/js/plugins-init/datatables.init.js" type="text/javascript"></script>
 <script src="public/js/custom.min.js" type="text/javascript"></script>
 <script src="public/js/deznav-init.js" type="text/javascript"></script>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

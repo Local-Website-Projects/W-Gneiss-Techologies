@@ -53,3 +53,42 @@ if(isset($_POST['update_category'])){
     }
 }
 
+
+/*update blog*/
+if(isset($_POST['update_blog'])){
+    $id = $db_handle->checkValue($_POST['id']);
+    $title = $db_handle->checkValue($_POST['title']);
+    $date = $db_handle->checkValue($_POST['date']);
+    $description = $db_handle->checkValue($_POST['blog_details']);
+    $image = '';
+    $query = '';
+    if (!empty($_FILES['blog_image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['blog_image']['name'];
+        $file_size = $_FILES['blog_image']['size'];
+        $file_tmp = $_FILES['blog_image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg" && $file_type != "gif") {
+            $image = '';
+        } else {
+            $data = $db_handle->runQuery("select * FROM `blog` WHERE blog_id='{$id}'");
+            unlink($data[0]['file']);
+            move_uploaded_file($file_tmp, "public/images/blog/" . $file_name);
+            $image = "public/images/blog/" . $file_name;
+            $query .= ",`file`='" . $image . "'";
+        }
+    }
+    $update = $db_handle->insertQuery("UPDATE `blog` SET `title`='$title',`date`='$date',`description`='$description',`updated_at`='$updated_at'". $query ." WHERE blog_id = {$id}");
+    if($update){
+        echo "<script>
+                document.cookie = 'alert = 4;';
+                window.location.href='View_Blog';
+                </script>";
+    }else {
+        echo "<script>
+                document.cookie = 'alert = 5;';
+                window.location.href='View_Blog';
+                </script>";
+    }
+}

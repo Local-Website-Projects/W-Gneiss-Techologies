@@ -1,3 +1,8 @@
+<?php
+session_start();
+include('admin/include/dbConfig.php');
+$db_handle = new DBController();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -1207,246 +1212,48 @@
 				}
 			}
 			}'>
-                <div class="item">
-                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='00ms'>
-                        <div class="blog-card__image">
-                            <img src="assets/images/blog/blog-1-1.png"
-                                 alt="Solution This Business For is Marketing Blog">
-                            <img src="assets/images/blog/blog-1-1.png"
-                                 alt="Solution This Business For is Marketing Blog">
-                            <a href="Details" class="blog-card__image__link"><span class="sr-only">Solution This Business For is Marketing Blog</span>
-                                <!-- /.sr-only --></a>
-                        </div><!-- /.blog-card__image -->
-                        <div class="blog-card__bg"></div>
-                        <div class="blog-card__meta">
-                            <div class="blog-card__meta__date"><span>15</span>Jun</div><!-- /.blog-card__date -->
-                            <div class="blog-card__meta__year">2023</div><!-- /.blog-card__yarn -->
-                        </div>
-                        <div class="blog-card__content">
-                            <h3 class="blog-card__title"><a href="Details">Solution This Business For is
-                                    Marketing Blog</a></h3><!-- /.blog-card__title -->
-                            <p class="blog-card__text">We business standard chunk ofI nibh velit auctor aliquet sollic
-                                tudin.</p><!-- /.blog-card__text -->
-                            <a href="Details" class="blog-card__link">
-                                Read more
-                                <i class="icofont-rounded-double-right"></i>
-                            </a><!-- /.blog-card__link -->
-                        </div><!-- /.blog-card__content -->
-                        <div class="blog-card__border"></div>
-                    </div><!-- /.blog-card -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
-                        <div class="blog-card__image">
-                            <img src="assets/images/blog/blog-1-2.png" alt="Business Rules of Running to Web Solution">
-                            <img src="assets/images/blog/blog-1-2.png" alt="Business Rules of Running to Web Solution">
-                            <a href="Details" class="blog-card__image__link"><span class="sr-only">Business Rules of Running to Web Solution</span>
-                                <!-- /.sr-only --></a>
-                        </div><!-- /.blog-card__image -->
-                        <div class="blog-card__bg"></div>
-                        <div class="blog-card__meta">
-                            <div class="blog-card__meta__date"><span>19</span>Jun</div><!-- /.blog-card__date -->
-                            <div class="blog-card__meta__year">2023</div><!-- /.blog-card__yarn -->
-                        </div>
-                        <div class="blog-card__content">
-                            <h3 class="blog-card__title"><a href="Details">Business Rules of Running to
-                                    Web Solution</a></h3><!-- /.blog-card__title -->
-                            <p class="blog-card__text">We business standard chunk ofI nibh velit auctor aliquet sollic
-                                tudin.</p><!-- /.blog-card__text -->
-                            <a href="Details" class="blog-card__link">
-                                Read more
-                                <i class="icofont-rounded-double-right"></i>
-                            </a><!-- /.blog-card__link -->
-                        </div><!-- /.blog-card__content -->
-                        <div class="blog-card__border"></div>
-                    </div><!-- /.blog-card -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='200ms'>
-                        <div class="blog-card__image">
-                            <img src="assets/images/blog/blog-1-3.png" alt="We Should be Descriptive This Business">
-                            <img src="assets/images/blog/blog-1-3.png" alt="We Should be Descriptive This Business">
-                            <a href="Details" class="blog-card__image__link"><span class="sr-only">We Should be Descriptive This Business</span>
-                                <!-- /.sr-only --></a>
-                        </div><!-- /.blog-card__image -->
-                        <div class="blog-card__bg"></div>
-                        <div class="blog-card__meta">
-                            <div class="blog-card__meta__date"><span>26</span>Jun</div><!-- /.blog-card__date -->
-                            <div class="blog-card__meta__year">2023</div><!-- /.blog-card__yarn -->
-                        </div>
-                        <div class="blog-card__content">
-                            <h3 class="blog-card__title"><a href="Details">We Should be Descriptive This
-                                    Business</a></h3><!-- /.blog-card__title -->
-                            <p class="blog-card__text">We business standard chunk ofI nibh velit auctor aliquet sollic
-                                tudin.</p><!-- /.blog-card__text -->
-                            <a href="Details" class="blog-card__link">
-                                Read more
-                                <i class="icofont-rounded-double-right"></i>
-                            </a><!-- /.blog-card__link -->
-                        </div><!-- /.blog-card__content -->
-                        <div class="blog-card__border"></div>
-                    </div><!-- /.blog-card -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='00ms'>
-                        <div class="blog-card__image">
-                            <img src="assets/images/blog/blog-1-1.png"
-                                 alt="Solution This Business For is Marketing Blog">
-                            <img src="assets/images/blog/blog-1-1.png"
-                                 alt="Solution This Business For is Marketing Blog">
-                            <a href="Details" class="blog-card__image__link"><span class="sr-only">Solution This Business For is Marketing Blog</span>
-                                <!-- /.sr-only --></a>
-                        </div><!-- /.blog-card__image -->
-                        <div class="blog-card__bg"></div>
-                        <div class="blog-card__meta">
-                            <div class="blog-card__meta__date"><span>15</span>Jun</div><!-- /.blog-card__date -->
-                            <div class="blog-card__meta__year">2023</div><!-- /.blog-card__yarn -->
-                        </div>
-                        <div class="blog-card__content">
-                            <h3 class="blog-card__title"><a href="Details">Solution This Business For is
-                                    Marketing Blog</a></h3><!-- /.blog-card__title -->
-                            <p class="blog-card__text">We business standard chunk ofI nibh velit auctor aliquet sollic
-                                tudin.</p><!-- /.blog-card__text -->
-                            <a href="Details" class="blog-card__link">
-                                Read more
-                                <i class="icofont-rounded-double-right"></i>
-                            </a><!-- /.blog-card__link -->
-                        </div><!-- /.blog-card__content -->
-                        <div class="blog-card__border"></div>
-                    </div><!-- /.blog-card -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
-                        <div class="blog-card__image">
-                            <img src="assets/images/blog/blog-1-2.png" alt="Business Rules of Running to Web Solution">
-                            <img src="assets/images/blog/blog-1-2.png" alt="Business Rules of Running to Web Solution">
-                            <a href="Details" class="blog-card__image__link"><span class="sr-only">Business Rules of Running to Web Solution</span>
-                                <!-- /.sr-only --></a>
-                        </div><!-- /.blog-card__image -->
-                        <div class="blog-card__bg"></div>
-                        <div class="blog-card__meta">
-                            <div class="blog-card__meta__date"><span>19</span>Jun</div><!-- /.blog-card__date -->
-                            <div class="blog-card__meta__year">2023</div><!-- /.blog-card__yarn -->
-                        </div>
-                        <div class="blog-card__content">
-                            <h3 class="blog-card__title"><a href="Details">Business Rules of Running to
-                                    Web Solution</a></h3><!-- /.blog-card__title -->
-                            <p class="blog-card__text">We business standard chunk ofI nibh velit auctor aliquet sollic
-                                tudin.</p><!-- /.blog-card__text -->
-                            <a href="Details" class="blog-card__link">
-                                Read more
-                                <i class="icofont-rounded-double-right"></i>
-                            </a><!-- /.blog-card__link -->
-                        </div><!-- /.blog-card__content -->
-                        <div class="blog-card__border"></div>
-                    </div><!-- /.blog-card -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='200ms'>
-                        <div class="blog-card__image">
-                            <img src="assets/images/blog/blog-1-3.png" alt="We Should be Descriptive This Business">
-                            <img src="assets/images/blog/blog-1-3.png" alt="We Should be Descriptive This Business">
-                            <a href="Details" class="blog-card__image__link"><span class="sr-only">We Should be Descriptive This Business</span>
-                                <!-- /.sr-only --></a>
-                        </div><!-- /.blog-card__image -->
-                        <div class="blog-card__bg"></div>
-                        <div class="blog-card__meta">
-                            <div class="blog-card__meta__date"><span>26</span>Jun</div><!-- /.blog-card__date -->
-                            <div class="blog-card__meta__year">2023</div><!-- /.blog-card__yarn -->
-                        </div>
-                        <div class="blog-card__content">
-                            <h3 class="blog-card__title"><a href="Details">We Should be Descriptive This
-                                    Business</a></h3><!-- /.blog-card__title -->
-                            <p class="blog-card__text">We business standard chunk ofI nibh velit auctor aliquet sollic
-                                tudin.</p><!-- /.blog-card__text -->
-                            <a href="Details" class="blog-card__link">
-                                Read more
-                                <i class="icofont-rounded-double-right"></i>
-                            </a><!-- /.blog-card__link -->
-                        </div><!-- /.blog-card__content -->
-                        <div class="blog-card__border"></div>
-                    </div><!-- /.blog-card -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='00ms'>
-                        <div class="blog-card__image">
-                            <img src="assets/images/blog/blog-1-1.png"
-                                 alt="Solution This Business For is Marketing Blog">
-                            <img src="assets/images/blog/blog-1-1.png"
-                                 alt="Solution This Business For is Marketing Blog">
-                            <a href="Details" class="blog-card__image__link"><span class="sr-only">Solution This Business For is Marketing Blog</span>
-                                <!-- /.sr-only --></a>
-                        </div><!-- /.blog-card__image -->
-                        <div class="blog-card__bg"></div>
-                        <div class="blog-card__meta">
-                            <div class="blog-card__meta__date"><span>15</span>Jun</div><!-- /.blog-card__date -->
-                            <div class="blog-card__meta__year">2023</div><!-- /.blog-card__yarn -->
-                        </div>
-                        <div class="blog-card__content">
-                            <h3 class="blog-card__title"><a href="Details">Solution This Business For is
-                                    Marketing Blog</a></h3><!-- /.blog-card__title -->
-                            <p class="blog-card__text">We business standard chunk ofI nibh velit auctor aliquet sollic
-                                tudin.</p><!-- /.blog-card__text -->
-                            <a href="Details" class="blog-card__link">
-                                Read more
-                                <i class="icofont-rounded-double-right"></i>
-                            </a><!-- /.blog-card__link -->
-                        </div><!-- /.blog-card__content -->
-                        <div class="blog-card__border"></div>
-                    </div><!-- /.blog-card -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='100ms'>
-                        <div class="blog-card__image">
-                            <img src="assets/images/blog/blog-1-2.png" alt="Business Rules of Running to Web Solution">
-                            <img src="assets/images/blog/blog-1-2.png" alt="Business Rules of Running to Web Solution">
-                            <a href="Details" class="blog-card__image__link"><span class="sr-only">Business Rules of Running to Web Solution</span>
-                                <!-- /.sr-only --></a>
-                        </div><!-- /.blog-card__image -->
-                        <div class="blog-card__bg"></div>
-                        <div class="blog-card__meta">
-                            <div class="blog-card__meta__date"><span>19</span>Jun</div><!-- /.blog-card__date -->
-                            <div class="blog-card__meta__year">2023</div><!-- /.blog-card__yarn -->
-                        </div>
-                        <div class="blog-card__content">
-                            <h3 class="blog-card__title"><a href="Details">Business Rules of Running to
-                                    Web Solution</a></h3><!-- /.blog-card__title -->
-                            <p class="blog-card__text">We business standard chunk ofI nibh velit auctor aliquet sollic
-                                tudin.</p><!-- /.blog-card__text -->
-                            <a href="Details" class="blog-card__link">
-                                Read more
-                                <i class="icofont-rounded-double-right"></i>
-                            </a><!-- /.blog-card__link -->
-                        </div><!-- /.blog-card__content -->
-                        <div class="blog-card__border"></div>
-                    </div><!-- /.blog-card -->
-                </div><!-- /.item -->
-                <div class="item">
-                    <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='200ms'>
-                        <div class="blog-card__image">
-                            <img src="assets/images/blog/blog-1-3.png" alt="We Should be Descriptive This Business">
-                            <img src="assets/images/blog/blog-1-3.png" alt="We Should be Descriptive This Business">
-                            <a href="Details" class="blog-card__image__link"><span class="sr-only">We Should be Descriptive This Business</span>
-                                <!-- /.sr-only --></a>
-                        </div><!-- /.blog-card__image -->
-                        <div class="blog-card__bg"></div>
-                        <div class="blog-card__meta">
-                            <div class="blog-card__meta__date"><span>26</span>Jun</div><!-- /.blog-card__date -->
-                            <div class="blog-card__meta__year">2023</div><!-- /.blog-card__yarn -->
-                        </div>
-                        <div class="blog-card__content">
-                            <h3 class="blog-card__title"><a href="Details">We Should be Descriptive This
-                                    Business</a></h3><!-- /.blog-card__title -->
-                            <p class="blog-card__text">We business standard chunk ofI nibh velit auctor aliquet sollic
-                                tudin.</p><!-- /.blog-card__text -->
-                            <a href="Details" class="blog-card__link">
-                                Read more
-                                <i class="icofont-rounded-double-right"></i>
-                            </a><!-- /.blog-card__link -->
-                        </div><!-- /.blog-card__content -->
-                        <div class="blog-card__border"></div>
-                    </div><!-- /.blog-card -->
-                </div><!-- /.item -->
+                <?php
+                $fetch_blog = $db_handle->runQuery("select * from blog order by blog_id desc limit 8");
+                $no_fetch_blog = $db_handle->numRows("select * from blog order by blog_id desc limit 8");
+                for ($i=0; $i<$no_fetch_blog; $i++){
+                    ?>
+                    <div class="item">
+                        <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='00ms'>
+                            <div class="blog-card__image">
+                                <img src="admin/<?php echo $fetch_blog[$i]['file'];?>"
+                                     alt="Blog">
+                                <img src="admin/<?php echo $fetch_blog[$i]['file'];?>"
+                                     alt="Blog">
+                                <a href="Details?id=<?php echo $fetch_blog[$i]['blog_id'];?>" class="blog-card__image__link"><span class="sr-only"><?php echo $fetch_blog[$i]['title'];?></span>
+                                    <!-- /.sr-only --></a>
+                            </div><!-- /.blog-card__image -->
+                            <div class="blog-card__bg"></div>
+                            <div class="blog-card__meta">
+                                <?php
+                                $date = date_format(new DateTime($fetch_blog[$i]['date']), 'd');
+                                $month = date_format(new DateTime($fetch_blog[$i]['date']), 'M');
+                                $year = date_format(new DateTime($fetch_blog[$i]['date']), 'Y');
+                                ?>
+                                <div class="blog-card__meta__date"><span><?php echo $date;?></span><?php echo $month;?></div><!-- /.blog-card__date -->
+                                <div class="blog-card__meta__year"><?php echo $year;?></div><!-- /.blog-card__yarn -->
+                            </div>
+                            <div class="blog-card__content">
+                                <h3 class="blog-card__title"><a href="Details?id=<?php echo $fetch_blog[$i]['blog_id'];?>"><?php echo $fetch_blog[$i]['title'];?></a></h3><!-- /.blog-card__title -->
+                                <p class="blog-card__text"><?php
+                                    echo substr($fetch_blog[$i]['description'],0, 100);
+                                    ?>...</p><!-- /.blog-card__text -->
+                                <a href="Details?id=<?php echo $fetch_blog[$i]['blog_id'];?>" class="blog-card__link">
+                                    Read more
+                                    <i class="icofont-rounded-double-right"></i>
+                                </a><!-- /.blog-card__link -->
+                            </div><!-- /.blog-card__content -->
+                            <div class="blog-card__border"></div>
+                        </div><!-- /.blog-card -->
+                    </div><!-- /.item -->
+                    <?php
+                }
+                ?>
+
             </div><!-- /.row -->
         </div><!-- /.container -->
     </section>

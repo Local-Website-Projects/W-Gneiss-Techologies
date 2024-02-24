@@ -1,3 +1,9 @@
+<?php
+session_start();
+include('include/dbConfig.php');
+$db_handle = new DBController();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,18 +33,21 @@
             </div>
             <div class="card">
                 <div class="card-body">
-                    <form>
+                    <form action="insert.php" method="post" enctype="multipart/form-data">
                         <div class="form-group">
-                            <input type="text" class="form-control input-rounded" name="blog_title" placeholder="Blog Title">
+                            <input type="text" class="form-control input-rounded" name="blog_title" placeholder="Blog Title" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control input-rounded" name="blog_details" placeholder="Blog Details">
+                            <input type="date" class="form-control input-rounded" name="date" placeholder="Blog Title" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="blog_details" placeholder="Blog Details" required></textarea>
                         </div>
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" name="blog_image">
+                            <input type="file" class="custom-file-input" name="blog_image" required>
                             <label class="custom-file-label">Choose Blog Image</label>
                         </div>
-                        <button type="button" class="btn btn-primary mt-3">Submit</button>
+                        <button type="submit" name="add_blog" class="btn btn-primary mt-3">Submit</button>
                     </form>
                 </div>
             </div>
@@ -53,14 +62,7 @@
         </div>
     </div>
 </div>
-<script src="public/vendor/global/global.min.js" type="text/javascript"></script>
-<script src="public/vendor/bootstrap-select/dist/js/bootstrap-select.min.js" type="text/javascript"></script>
-<script src="public/vendor/chart.js/Chart.bundle.min.js" type="text/javascript"></script>
-<script src="public/vendor/owl-carousel/owl.carousel.js" type="text/javascript"></script>
-<script src="public/vendor/apexchart/apexchart.js" type="text/javascript"></script>
-<script src="public/js/dashboard/dashboard-1.js" type="text/javascript"></script>
-<script src="public/js/custom.min.js" type="text/javascript"></script>
-<script src="public/js/deznav-init.js" type="text/javascript"></script>
+<?php include ('include/js.php');?>
 <script>
     CKEDITOR.replace('blog_details');
 </script>
