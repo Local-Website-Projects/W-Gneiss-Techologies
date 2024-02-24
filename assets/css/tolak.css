@@ -8880,7 +8880,7 @@ body.megamenu-popup-active .mobile-nav__content {
 
 .product-one {
   position: relative;
-  padding: 120px 0;
+  padding: 20px 0 120px 0;
 }
 @media (max-width: 767px) {
   .product-one {
@@ -13438,6 +13438,7 @@ body.megamenu-popup-active .mobile-nav__content {
   margin: auto;
   padding: 51px 25px 51px;
   transition: 500ms ease;
+  height: 540px;
 }
 .feature-one__item:hover {
   box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.13);
