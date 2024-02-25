@@ -45,7 +45,7 @@ $db_handle = new DBController();
                         </div>
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" name="blog_image" required>
-                            <label class="custom-file-label">Choose Blog Image</label>
+                            <label class="custom-file-label">Choose Blog Image (770*442)</label>
                         </div>
                         <button type="submit" name="add_blog" class="btn btn-primary mt-3">Submit</button>
                     </form>
