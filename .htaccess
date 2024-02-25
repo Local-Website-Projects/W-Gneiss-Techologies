@@ -20,4 +20,5 @@ RewriteRule ^Courses course.php [NE,L]
 RewriteRule ^Contact contact.php [NE,L]
 RewriteRule ^Project-Details project_details.php [NE,L]
 RewriteRule ^Details blog_details.php [NE,L]
+RewriteRule ^Product-Details product_details.php [NE,L]
 

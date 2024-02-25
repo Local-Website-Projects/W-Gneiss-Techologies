@@ -15,11 +15,11 @@
         <ul class="mobile-nav__contact list-unstyled">
             <li>
                 <i class="fa fa-envelope"></i>
-                <a href="mailto:needhelp@tolak.com">needhelp@gneiss.com</a>
+                <a href="mailto:gneisstechnologies@gmail.com">gneisstechnologies@gmail.com</a>
             </li>
             <li>
                 <i class="fa fa-phone-alt"></i>
-                <a href="tel:666-888-0000">666 888 0000</a>
+                <a href="tel:8801521411273">+8801521411273</a>
             </li>
         </ul><!-- /.mobile-nav__contact -->
         <div class="mobile-nav__social">
