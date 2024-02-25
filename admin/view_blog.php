@@ -34,7 +34,7 @@ $db_handle = new DBController();
                                 ?>
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title">Edit Category</h4>
+                                        <h4 class="card-title">Edit Blog</h4>
                                     </div>
                                     <div class="card-body">
                                         <form action="update.php" method="POST" enctype="multipart/form-data">

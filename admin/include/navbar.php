@@ -33,6 +33,11 @@
                     <li><a href="View_Product">View</a></li>
                 </ul>
             </li>
+            <li><a class="ai-icon" href="Contact" aria-expanded="false">
+                    <i class="flaticon-381-controls"></i>
+                    <span class="nav-text">Contact Form Data</span>
+                </a>
+            </li>
         </ul>
 
         <div class="copyright">
