@@ -38,6 +38,11 @@
                     <span class="nav-text">Contact Form Data</span>
                 </a>
             </li>
+            <li><a class="ai-icon" href="Newsletter" aria-expanded="false">
+                    <i class="flaticon-381-news"></i>
+                    <span class="nav-text">Newsletter Data</span>
+                </a>
+            </li>
         </ul>
 
         <div class="copyright">

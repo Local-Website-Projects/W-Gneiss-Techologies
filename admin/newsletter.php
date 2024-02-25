@@ -10,7 +10,7 @@ $db_handle = new DBController();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>View Contact Data - Gneiss Technology</title>
+    <title>View Newsletter - Gneiss Technology</title>
     <?php include('include/css.php'); ?>
 </head>
 <body>
@@ -29,7 +29,7 @@ $db_handle = new DBController();
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Contact Data List</h4>
+                                    <h4 class="card-title">Newsletter List</h4>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
@@ -37,26 +37,20 @@ $db_handle = new DBController();
                                             <thead>
                                             <tr>
                                                 <th>Sl No</th>
-                                                <th>Name</th>
                                                 <th>Email</th>
-                                                <th>Contact No</th>
-                                                <th>Message</th>
                                                 <th>Time</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             <?php
-                                            $fetch_contact = $db_handle->runQuery("select * from contact_form_data order by id desc");
-                                            $no_fetch_contact = $db_handle->numRows("select * from contact_form_data order by id desc");
-                                            for ($i = 0; $i < $no_fetch_contact; $i++) {
+                                            $fetch_newsletter = $db_handle->runQuery("select * from newsletter order by id desc");
+                                            $no_fetch_newsletter = $db_handle->numRows("select * from newsletter order by id desc");
+                                            for ($i = 0; $i < $no_fetch_newsletter; $i++) {
                                                 ?>
                                                 <tr>
                                                     <td><?php echo $i+1;?></td>
-                                                    <td><?php echo $fetch_contact[$i]['name']; ?></td>
-                                                    <td><?php echo $fetch_contact[$i]['email']; ?></td>
-                                                    <td><?php echo $fetch_contact[$i]['number']; ?></td>
-                                                    <td><?php echo $fetch_contact[$i]['message']; ?></td>
-                                                    <td><?php echo date_format(new DateTime($fetch_contact[$i]['inserted_at']), 'd M, Y'); ?></td>
+                                                    <td><?php echo $fetch_newsletter[$i]['email']; ?></td>
+                                                    <td><?php echo date_format(new DateTime($fetch_newsletter[$i]['inserted_at']), 'd M, Y'); ?></td>
                                                 </tr>
                                                 <?php
                                             }

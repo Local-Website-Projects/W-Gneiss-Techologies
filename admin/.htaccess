@@ -13,5 +13,6 @@ RewriteRule ^View_Blog view_blog.php [NE,L]
 RewriteRule ^Add_Product add_product.php [NE,L]
 RewriteRule ^View_Product view_product.php [NE,L]
 RewriteRule ^Contact view_contact.php [NE,L]
+RewriteRule ^Newsletter newsletter.php [NE,L]
 
 

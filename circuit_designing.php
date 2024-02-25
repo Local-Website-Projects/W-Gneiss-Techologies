@@ -1,3 +1,8 @@
+<?php
+session_start();
+include('admin/include/dbConfig.php');
+$db_handle = new DBController();
+?>
 <!DOCTYPE html>
 <html lang="en">
 

@@ -1,10 +1,15 @@
+<?php
+session_start();
+include('admin/include/dbConfig.php');
+$db_handle = new DBController();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Blank - Gneiss technology</title>
+    <title>Services - Gneiss technology</title>
     <meta name="description" content=""/>
     <meta name="keywords" content=""/>
     <?php include('include/css.php'); ?>

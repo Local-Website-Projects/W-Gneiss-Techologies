@@ -1,3 +1,17 @@
+<?php
+date_default_timezone_set("Asia/Dhaka");
+$inserted_at = date("Y-m-d H:i:s");
+if(isset($_POST['newslatter'])){
+    $email = $db_handle->checkValue($_POST['email']);
+    $insert = $db_handle->insertQuery("INSERT INTO `newsletter`(`email`, `inserted_at`) VALUES ('$email','$inserted_at')");
+    if($insert){
+        echo "<script>
+alert('Thank you! From now you will receive all updates from us.');
+</script>";
+    }
+}
+?>
+
 <section class="mail-section mt-5">
     <div class="container">
         <div class="mail-section__wrapper">
@@ -10,9 +24,9 @@
                     </div>
                 </div>
                 <div class="col-md-7 col-lg-5">
-                    <form action="#" class="mail-section__newsletter mc-form">
-                        <input type="text" name="EMAIL" placeholder="Enter your email">
-                        <button type="submit" class="tolak-btn">
+                    <form action="#" class="mail-section__newsletter" method="post">
+                        <input type="text" name="email" placeholder="Enter your email" required>
+                        <button type="submit" name="newslatter" class="tolak-btn">
                             <b>Subscribe</b><span></span>
                             <span class="sr-only">Subscribe</span><!-- /.sr-only -->
                         </button>
