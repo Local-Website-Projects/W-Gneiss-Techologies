@@ -1,7 +1,56 @@
 <?php
 session_start();
+if(isset($_SESSION['user'])){
+    echo "
+    <script>
+    window.location.href = 'Home';
+</script>
+    ";
+}
 include('admin/include/dbConfig.php');
 $db_handle = new DBController();
+date_default_timezone_set("Asia/Dhaka");
+if (isset($_POST['register'])){
+    $inserted_at = date("Y-m-d H:i:s");
+    $full_name = $db_handle->checkValue($_POST['full_name']);
+    $contact_number = $db_handle->checkValue($_POST['contact_number']);
+    $address = $db_handle->checkValue($_POST['address']);
+    $email = $db_handle->checkValue($_POST['email']);
+    $password = $db_handle->checkValue($_POST['password']);
+    $keyword = 'GneissTechnology';
+    $method = 'aes-256-cbc';
+    $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length($method));
+
+    $encrypted = openssl_encrypt($password, $method, $keyword, 0, $iv);
+    $ivHex = bin2hex($iv);
+
+    $checkEmail = $db_handle->numRows("select * from users where email = '$email'");
+    if($checkEmail == 0){
+        $register = $db_handle->insertQuery("INSERT INTO `users`(`full_name`, `contact_number`, `address`, `email`, `password`, `pass_key`, `inserted_at`) VALUES ('$full_name','$contact_number','$address','$email','$encrypted','$ivHex','$inserted_at')");
+        if($register){
+            echo "
+        <script>
+        alert('Your Account is Successfully Created!');
+        window.location.href = 'Login';
+</script>
+        ";
+        } else {
+            echo "
+        <script>
+        alert('Something Went Wrong!');
+        window.location.href = 'Register';
+</script>
+        ";
+        }
+    } else {
+        echo "
+        <script>
+        alert('This email is already registered with us!');
+        window.location.href = 'Register';
+</script>
+        ";
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +58,7 @@ $db_handle = new DBController();
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login || Gneiss Technologies</title>
+    <title>Registration || Gneiss Technologies</title>
     <!-- favicons Icons -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon.png" />
     <link rel="manifest" href="assets/images/favicons/site.webmanifest" />
@@ -84,25 +133,25 @@ $db_handle = new DBController();
             <div class="row d-flex align-items-center justify-content-center">
                 <div class="col-lg-8 wow fadeInUp animated" data-wow-delay="300ms">
                     <div class="login-page__wrap">
-                        <h3 class="login-page__wrap__title">Login</h3>
-                        <form class="login-page__form">
+                        <h3 class="login-page__wrap__title">Register</h3>
+                        <form class="login-page__form" method="post" action="#">
                             <div class="login-page__form-input-box">
-                                <input type="text" placeholder="Full Name *">
+                                <input type="text" placeholder="Full Name *" name="full_name" required>
                             </div>
                             <div class="login-page__form-input-box">
-                                <input type="text" placeholder="Contact Number *">
+                                <input type="text" placeholder="Contact Number *" name="contact_number" required>
                             </div>
                             <div class="login-page__form-input-box">
-                                <input type="text" placeholder="Address *">
+                                <input type="text" placeholder="Address *" name="address" required>
                             </div>
                             <div class="login-page__form-input-box">
-                                <input type="email" placeholder="Email *">
+                                <input type="email" placeholder="Email *" name="email" required>
                             </div>
                             <div class="login-page__form-input-box">
-                                <input type="password" placeholder="Password *">
+                                <input type="password" placeholder="Password *" name="password" required>
                             </div>
                             <div class="login-page__form-btn-box">
-                                <button type="submit" class="tolak-btn tolak-btn--base">
+                                <button type="submit" class="tolak-btn tolak-btn--base" name="register">
                                     <b>Register</b><span></span>
                                 </button>
                                 <div class="login-page__form-forgot-password">

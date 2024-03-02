@@ -1,3 +1,43 @@
+<?php
+session_start();
+if(isset($_SESSION['user'])){
+    echo "
+    <script>
+    window.location.href = 'Home';
+</script>
+    ";
+}
+include('admin/include/dbConfig.php');
+$db_handle = new DBController();
+date_default_timezone_set("Asia/Dhaka");
+if(isset($_POST['login'])){
+    $email = $db_handle->checkValue($_POST['email']);
+    $password = $db_handle->checkValue($_POST['password']);
+    $checkEmail = $db_handle->runQuery("select * from users where email = '$email'");
+    $encryptedPassword = $checkEmail[0]['password'];
+    $ivFromDatabase = hex2bin($checkEmail[0]['pass_key']);
+    $keyword = 'GneissTechnology';
+    $method = 'aes-256-cbc';
+    $decrypted = openssl_decrypt($encryptedPassword, $method, $keyword, 0, $ivFromDatabase);
+    if($decrypted == $password){
+        $_SESSION['user'] = $checkEmail[0]['user_id'];
+        echo "
+        <script>
+        alert('Login Successfull!');
+        window.location.href = 'Home';
+</script>
+        ";
+    } else{
+        echo "
+        <script>
+        alert('Password does not match!);
+        window.location.href = 'Login';
+</script>
+        ";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,19 +119,15 @@
                 <div class="col-lg-8 wow fadeInUp animated" data-wow-delay="300ms">
                     <div class="login-page__wrap">
                         <h3 class="login-page__wrap__title">Login</h3>
-                        <form class="login-page__form">
+                        <form class="login-page__form" action="#" method="post">
                             <div class="login-page__form-input-box">
-                                <input type="email" placeholder="Email *">
+                                <input type="email" placeholder="Email *" name="email" required>
                             </div>
                             <div class="login-page__form-input-box">
-                                <input type="password" placeholder="Password *">
-                            </div>
-                            <div class="login-page__checked-box">
-                                <input type="checkbox" name="save-data" id="save-data">
-                                <label for="save-data"><span></span>Remember Me?</label>
+                                <input type="password" placeholder="Password *" name="password" required>
                             </div>
                             <div class="login-page__form-btn-box">
-                                <button type="submit" class="tolak-btn tolak-btn--base">
+                                <button type="submit" class="tolak-btn tolak-btn--base" name="login">
                                     <b>Login</b><span></span>
                                 </button>
                                 <div class="login-page__form-forgot-password">
