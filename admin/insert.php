@@ -86,3 +86,42 @@ if(isset($_POST['add_blog'])){
                 </script>";
     }
 }
+
+
+
+if(isset($_POST['add_work'])){
+    $title = $db_handle->checkValue($_POST['title']);
+    $description = $db_handle->checkValue($_POST['description']);
+    $image = '';
+    if (!empty($_FILES['work_image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['work_image']['name'];
+        $file_size = $_FILES['work_image']['size'];
+        $file_tmp  = $_FILES['work_image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg") {
+            $image = '';
+            echo "<script>
+                document.cookie = 'alert = 5;';
+                window.location.href='Add_Previous_Work';
+                </script>";
+
+        } else {
+            move_uploaded_file($file_tmp, "public/images/works/" . $file_name);
+            $image = "public/images/works/" . $file_name;
+        }
+    }
+    $work = $db_handle->insertQuery("INSERT INTO `previous_works`(`title`, `small_desc`, `file`, `inserted_at`) VALUES ('$title','$description','$image','$inserted_at')");
+    if($work){
+        echo "<script>
+                document.cookie = 'alert = 4;';
+                window.location.href='Add_Previous_Work';
+                </script>";
+    }else{
+        echo "<script>
+                document.cookie = 'alert = 5;';
+                window.location.href='Add_Previous_Work';
+                </script>";
+    }
+}

@@ -16,3 +16,16 @@ if(isset($_GET['blogID'])){
         echo 'P';
     }
 }
+
+/*delete previous works*/
+if(isset($_GET['workID'])){
+    $row = $db_handle->numRows("select * FROM `previous_works` WHERE id='{$_GET['workID']}'");
+
+    if ($row) {
+        unlink($row[0]['file']);
+        $db_handle->insertQuery("delete from previous_works where id=" . $_GET['workID'] . "");
+        echo 'success';
+    } else {
+        echo 'P';
+    }
+}

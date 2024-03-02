@@ -25,6 +25,15 @@
                 </ul>
             </li>
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <i class="flaticon-381-save"></i>
+                    <span class="nav-text">Previous Works</span>
+                </a>
+                <ul aria-expanded="false">
+                    <li><a href="Add_Previous_Work">Add</a></li>
+                    <li><a href="View_Previous_Work">View</a></li>
+                </ul>
+            </li>
+            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-picture"></i>
                     <span class="nav-text">Product</span>
                 </a>

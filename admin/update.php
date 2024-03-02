@@ -92,3 +92,41 @@ if(isset($_POST['update_blog'])){
                 </script>";
     }
 }
+
+/*update previous works*/
+if(isset($_POST['update_work'])){
+    $id = $db_handle->checkValue($_POST['id']);
+    $title = $db_handle->checkValue($_POST['title']);
+    $description = $db_handle->checkValue($_POST['description']);
+    $image = '';
+    $query = '';
+    if (!empty($_FILES['work_image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['work_image']['name'];
+        $file_size = $_FILES['work_image']['size'];
+        $file_tmp = $_FILES['work_image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg" && $file_type != "gif") {
+            $image = '';
+        } else {
+            $data = $db_handle->runQuery("select * FROM `previous_works` WHERE id='{$id}'");
+            unlink($data[0]['file']);
+            move_uploaded_file($file_tmp, "public/images/works/" . $file_name);
+            $image = "public/images/works/" . $file_name;
+            $query .= ",`file`='" . $image . "'";
+        }
+    }
+    $update = $db_handle->insertQuery("UPDATE `previous_works` SET `title`='$title',`small_desc`='$description',`updated_at`='$updated_at'". $query ." WHERE id = {$id}");
+    if($update){
+        echo "<script>
+                document.cookie = 'alert = 4;';
+                window.location.href='View_Previous_Work';
+                </script>";
+    }else {
+        echo "<script>
+                document.cookie = 'alert = 5;';
+                window.location.href='View_Previous_Work';
+                </script>";
+    }
+}
