@@ -29,3 +29,23 @@ if(isset($_GET['workID'])){
         echo 'P';
     }
 }
+
+/*product delete*/
+if(isset($_GET['productID'])){
+    $row = $db_handle->numRows("select * FROM `products` WHERE product_id='{$_GET['productID']}'");
+
+    if ($row) {
+        unlink($row[0]['main_image']);
+        $fileNames = explode(',', $row[0]['related_image']);
+        foreach ($fileNames as $fileName) {
+            $fileName = trim($fileName);
+            if (file_exists($fileName)) {
+                unlink($fileName);
+            }
+        }
+        $db_handle->insertQuery("delete from products where product_id={$_GET['productID']}");
+        echo 'success';
+    } else {
+        echo 'P';
+    }
+}

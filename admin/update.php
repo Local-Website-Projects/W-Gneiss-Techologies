@@ -130,3 +130,71 @@ if(isset($_POST['update_work'])){
                 </script>";
     }
 }
+
+
+/*update products*/
+if (isset($_POST['update_product'])) {
+    $id = $db_handle->checkValue($_POST['id']);
+    $product_name = $db_handle->checkValue($_POST['product_name']);
+    $small_desc = $db_handle->checkValue($_POST['small_desc']);
+    $long_desc = $db_handle->checkValue($_POST['long_desc']);
+    $product_code = $db_handle->checkValue($_POST['product_code']);
+
+    $image = '';
+    $query = '';
+    $rQuery = '';
+    if (!empty($_FILES['main_image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['main_image']['name'];
+        $file_size = $_FILES['main_image']['size'];
+        $file_tmp = $_FILES['main_image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg" && $file_type != "gif") {
+            $image = '';
+        } else {
+            $data = $db_handle->runQuery("select * FROM `products` WHERE product_id='{$id}'");
+            unlink($data[0]['main_image']);
+            move_uploaded_file($file_tmp, "public/images/product/" . $file_name);
+            $image = "public/images/product/" . $file_name;
+            $query .= ",`main_image`='" . $image . "'";
+        }
+    }
+    if (!empty($_FILES['related_image']['tmp_name'][0])) {
+        // At least one image is selected
+        $row = $db_handle->numRows("select * FROM `products` WHERE product_id='$id'");
+
+        if ($row) {
+            $fileNames = explode(',', $row[0]['related_image']);
+            foreach ($fileNames as $fileName) {
+                $fileName = trim($fileName);
+                unlink($fileName);
+            }
+        }
+        $dataFileName = [];
+        foreach ($_FILES['related_image']['tmp_name'] as $index => $uploadedFile) {
+            $originalFileName = $_FILES['related_image']['name'][$index];
+            $RandomAccountNumber = mt_rand(1, 99999);
+            $newFileName = "public/images/product/" . $RandomAccountNumber . '_' . $originalFileName;
+            move_uploaded_file($uploadedFile, $newFileName);
+            $dataFileName[] = $newFileName;
+        }
+
+        $databaseValue = implode(',', $dataFileName);
+        $related_image = $databaseValue;
+        $rQuery .= ",`related_image`='" . $related_image . "'";
+    }
+
+    $data = $db_handle->insertQuery("UPDATE `products` SET `product_name`='$product_name',`small_desc`='$small_desc',`long_desc`='$long_desc',`updated_at`='$updated_at',`product_code`='$product_code' " . $query . $rQuery ." WHERE `product_id` = '$id'");
+    if($data){
+        echo "<script>
+                document.cookie = 'alert = 4;';
+                window.location.href='View_Product';
+                </script>";
+    } else{
+        echo "<script>
+                document.cookie = 'alert = 5;';
+                window.location.href='View_Product';
+                </script>";
+    }
+}

@@ -88,7 +88,7 @@ if(isset($_POST['add_blog'])){
 }
 
 
-
+/*add previous works*/
 if(isset($_POST['add_work'])){
     $title = $db_handle->checkValue($_POST['title']);
     $description = $db_handle->checkValue($_POST['description']);
@@ -124,4 +124,71 @@ if(isset($_POST['add_work'])){
                 window.location.href='Add_Previous_Work';
                 </script>";
     }
+}
+
+/*add products*/
+if(isset($_POST['add_product'])){
+    $product_title = $db_handle->checkValue($_POST['product_title']);
+    $small_desc = $db_handle->checkValue($_POST['small_desc']);
+    $product_code = $db_handle->checkValue($_POST['product_code']);
+    $long_desc = $db_handle->checkValue($_POST['long_desc']);
+    $image = '';
+    $related_image = '';
+    if (!empty($_FILES['product_image']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+        $file_name = $RandomAccountNumber . "_" . $_FILES['product_image']['name'];
+        $file_size = $_FILES['product_image']['size'];
+        $file_tmp  = $_FILES['product_image']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if ($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg") {
+            $image = '';
+            echo "<script>
+                document.cookie = 'alert = 5;';
+                window.location.href='Add_Product';
+                </script>";
+
+        } else {
+            move_uploaded_file($file_tmp, "public/images/product/" . $file_name);
+            $image = "public/images/product/" . $file_name;
+        }
+    }
+    if (!empty($_FILES['related_image']['tmp_name'][0])) {
+        // At least one image is selected
+
+        $dataFileName = []; // Array to store the file names
+
+        // Loop through each uploaded image file
+        foreach ($_FILES['related_image']['tmp_name'] as $index => $uploadedFile) {
+            $originalFileName = $_FILES['related_image']['name'][$index];
+            $RandomAccountNumber = mt_rand(1, 99999);
+            $newFileName = "public/images/product/" . $RandomAccountNumber . '_' . $originalFileName;
+            move_uploaded_file($uploadedFile, $newFileName);
+            $dataFileName[] = $newFileName;
+        }
+
+        $databaseValue = implode(',', $dataFileName);
+        $related_image = $databaseValue;
+    } else {
+        $related_image = '';
+    }
+
+    $product = $db_handle->insertQuery("INSERT INTO `products`(`product_name`, `small_desc`, `long_desc`, `main_image`, `related_images`, `inserted_at`, `product_code`) VALUES ('$product_title','$small_desc','$long_desc','$image','$related_image','$inserted_at','$product_code')");
+
+    if($product){
+        echo "
+        <script>
+        document.cookie = 'alert = 4;';
+        window.location.href='Add_Product';
+</script>
+        ";
+    } else {
+        echo "
+        <script>
+        document.cookie = 'alert = 5;';
+        window.location.href='Add_Product';
+</script>
+        ";
+    }
+
 }
