@@ -1,3 +1,17 @@
+<?php
+session_start();
+include('admin/include/dbConfig.php');
+$db_handle = new DBController();
+if(isset($_GET['id'])){
+    $product = $db_handle->runQuery("select * from products where product_id = {$_GET['id']}");
+}else {
+    echo "
+    <script>
+    window.location.href= 'Home';
+</script>
+    ";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,17 +67,17 @@
             <div class="row">
                 <div class="col-lg-6 col-xl-6 wow fadeInLeft" data-wow-delay="200ms">
                     <div class="product-details__img">
-                        <img src="assets/images/products/product-d-1-1.jpg" alt="">
+                        <img src="admin/<?php echo $product[0]['main_image'];?>" alt="">
                         <div class="product-details__img-search">
-                            <a class="img-popup" href="assets/images/products/product-d-1-1.jpg"><span class="icon-magnifying-glass"></span></a>
+                            <a class="img-popup" href="admin/<?php echo $product[0]['main_image'];?>"><span class="icon-magnifying-glass"></span></a>
                         </div><!-- /.product-image -->
                     </div>
                 </div><!-- /.column -->
                 <div class="col-lg-6 col-xl-6 wow fadeInRight" data-wow-delay="300ms">
                     <div class="product-details__content">
                         <div class="product-details__top">
-                            <h3 class="product-details__title">Office Chair</h3><!-- /.product-title -->
-                            <div class="product-details__price">$78.00</div><!-- /.product-price -->
+                            <h3 class="product-details__title"><?php echo $product[0]['product_name'];?></h3><!-- /.product-title -->
+                            <div class="product-details__price"><?php echo $product[0]['product_code'];?></div><!-- /.product-price -->
                         </div>
                         <div class="product-details__review">
                             <span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
@@ -72,43 +86,15 @@
                         <div class="product-details__divider"></div><!-- /.divider -->
                         <div class="product-details__excerpt">
                             <p class="product-details__excerpt-text1">
-                                Aliquam hendrerit a augue insuscipit. Etiam aliquam massa quis des mauris commodo venenatis
-                                ligula commodo leez sed blandit
-                                convallis dignissim onec vel pellentesque neque.
+                                <?php echo $product[0]['small_desc'];?>
                             </p>
-                            <p class="product-details__excerpt-text2">REF. 4231/406 <br>Available in store</p>
+                            <p class="product-details__excerpt-text2">Product Code: <?php echo $product[0]['product_code'];?> <br>Available in store</p>
                         </div><!-- /.excerp-text -->
-                        <div class="product-details__quantity">
-                            <h3 class="product-details__quantity-title">Quantity</h3>
-                            <div class="quantity-box">
-                                <button type="button" class="sub"><i class="fa fa-minus"></i></button>
-                                <input type="text" id="1" value="1">
-                                <button type="button" class="add"><i class="fa fa-plus"></i></button>
-                            </div>
-                        </div><!-- /.quantity -->
-                        <div class="product-details__buttons">
-                            <a href="cart.html" class="tolak-btn"><b>Add to Cart</b><span></span></a>
-                            <a href="cart.html" class="tolak-btn"><b>Add to wishlist</b><span></span></a>
+
+                        <div class="product-details__buttons mt-5">
+                            <a href="Order?product=<?php echo $product[0]['product_code'];?>" class="tolak-btn"><b>Order Now</b><span></span></a>
+                            <!-- Button trigger modal -->
                         </div><!-- /.qty-btn -->
-                        <div class="product-details__socials">
-                            <h4 class="product-details__socials__title">Share with friends</h4>
-                            <a href="https://facebook.com/">
-                                <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                                <span class="sr-only">Facebook</span>
-                            </a>
-                            <a href="https://pinterest.com/">
-                                <i class="fab fa-pinterest-p" aria-hidden="true"></i>
-                                <span class="sr-only">Pinterest</span>
-                            </a>
-                            <a href="https://twitter.com/">
-                                <i class="fab fa-twitter" aria-hidden="true"></i>
-                                <span class="sr-only">Twitter</span>
-                            </a>
-                            <a href="https://instagram.com/">
-                                <i class="fab fa-instagram" aria-hidden="true"></i>
-                                <span class="sr-only">Instagram</span>
-                            </a>
-                        </div><!-- /.social-share -->
                     </div>
                 </div>
             </div>
@@ -116,24 +102,7 @@
             <!-- /.product-description -->
             <div class="product-details__description wow fadeInUp" data-wow-delay="300ms">
                 <h3 class="product-details__description__title">Description</h3>
-                <p class="product-details__description__text">
-                    Lorem ipsum dolor sit amet, cibo mundi ea duo, vim exerci phaedrum. There are many variations of
-                    passages of Lorem Ipsum available,
-                    but the majority have alteration in some injected or words which don't look even slightly believable. If
-                    you are going to use a
-                    passage of Lorem Ipsum, you need to be sure there isn't anything embarrang hidden in the middle of text.
-                </p>
-                <ul class="list-unstyled product-details__description__lists">
-                    <li><span class="icon-right-arrow"></span>Nam at elit nec neque suscipit gravida.</li>
-                    <li><span class="icon-right-arrow"></span>Aenean egestas orci eu maximus tincidunt.</li>
-                    <li><span class="icon-right-arrow"></span>Curabitur vel turpis id tellus cursus laoreet.</li>
-                </ul>
-                <p class="product-details__description__text">
-                    All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making
-                    this the first true generator on the Internet.
-                    It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to
-                    generate Lorem Ipsum which looks reasonable.
-                </p>
+                <?php echo $product[0]['long_desc'];?>
             </div>
             <!-- /.product-description -->
             <!-- /.product-comment -->

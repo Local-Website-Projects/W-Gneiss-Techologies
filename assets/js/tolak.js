@@ -360,6 +360,7 @@
       $("body").toggleClass("locked");
     });
   }
+
   if ($(".mini-cart__toggler").length) {
     $(".mini-cart__toggler").on("click", function (e) {
       e.preventDefault();

@@ -198,7 +198,7 @@ $db_handle = new DBController();
                         <div class="feature-one__item__icon">
                             <span class="icon-customer-service"></span>
                         </div>
-                        <h4 class="feature-one__item__title">Service</h4>
+                        <h4 class="feature-one__item__title"><a href="Services">Service</a></h4>
                         <p class="feature-one__item__text">we are offer customizable solutions designed to meet your
                             specific requirements.</p>
                         <div class="feature-one__item__year">2020</div>
@@ -212,7 +212,7 @@ $db_handle = new DBController();
                         <div class="feature-one__item__icon">
                             <span class="icon-shopping-cart"></span>
                         </div>
-                        <h4 class="feature-one__item__title">Shop</h4>
+                        <h4 class="feature-one__item__title"><a href="Shop">Shop</a></h4>
                         <p class="feature-one__item__text">Explore our curated collection of premium. products to
                             elevate your everyday life. Shop now and redefine your lifestyle with us!</p>
                         <div class="feature-one__item__year">2021</div>
@@ -226,7 +226,7 @@ $db_handle = new DBController();
                         <div class="feature-one__item__icon">
                             <span class="icon-check-mark"></span>
                         </div>
-                        <h4 class="feature-one__item__title">Courses</h4>
+                        <h4 class="feature-one__item__title"><a href="Courses">Courses</a></h4>
                         <p class="feature-one__item__text">Empower Your Future with Cutting-Edge Electronics: Enroll in
                             Our Dynamic Course Today!</p>
                         <div class="feature-one__item__year">2022</div>
@@ -240,7 +240,7 @@ $db_handle = new DBController();
                         <div class="feature-one__item__icon">
                             <span class="icon-advertisement"></span>
                         </div>
-                        <h4 class="feature-one__item__title">Blog</h4>
+                        <h4 class="feature-one__item__title"><a href="Blog">Blog</a></h4>
                         <p class="feature-one__item__text">Unlock the doors to knowledge with our educational blog
                             section Explore a treasure trave of insights, tips, and resources curated to fuel your
                             learning journey</p>

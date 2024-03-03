@@ -22,4 +22,5 @@ RewriteRule ^Project-Details project_details.php [NE,L]
 RewriteRule ^Details blog_details.php [NE,L]
 RewriteRule ^Product-Details product_details.php [NE,L]
 RewriteRule ^Logout logout.php [NE,L]
+RewriteRule ^Order order.php [NE,L]
 

@@ -35,7 +35,7 @@ $db_handle = new DBController();
             <div class="row">
                 <div class="col-md-7">
                     <div class="page-header__content">
-                        <h2 class="page-header__title">Service Page</h2>
+                        <h2 class="page-header__title">Services</h2>
                         <ul class="tolak-breadcrumb list-unstyled">
                             <li><a href="Home">Home</a></li>
                             <li><span>Services</span></li>

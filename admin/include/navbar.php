@@ -6,7 +6,7 @@
                     <span class="nav-text">Dashboard</span>
                 </a>
             </li>
-            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+           <!-- <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-television"></i>
                     <span class="nav-text">Category</span>
                 </a>
@@ -14,7 +14,7 @@
                     <li><a href="Add_Category">Add</a></li>
                     <li><a href="View_Category">View</a></li>
                 </ul>
-            </li>
+            </li>-->
             <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                     <i class="flaticon-381-album"></i>
                     <span class="nav-text">Blog</span>
@@ -50,6 +50,11 @@
             <li><a class="ai-icon" href="Newsletter" aria-expanded="false">
                     <i class="flaticon-381-news"></i>
                     <span class="nav-text">Newsletter Data</span>
+                </a>
+            </li>
+            <li><a class="ai-icon" href="Order_Request" aria-expanded="false">
+                    <i class="flaticon-381-on"></i>
+                    <span class="nav-text">Order Request</span>
                 </a>
             </li>
         </ul>

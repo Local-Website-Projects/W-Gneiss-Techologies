@@ -16,5 +16,6 @@ RewriteRule ^Contact view_contact.php [NE,L]
 RewriteRule ^Newsletter newsletter.php [NE,L]
 RewriteRule ^Add_Previous_Work add_previous_work.php [NE,L]
 RewriteRule ^View_Previous_Work view_previous_work.php [NE,L]
+RewriteRule ^Order_Request order_request.php [NE,L]
 
 

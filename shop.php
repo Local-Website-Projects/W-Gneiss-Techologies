@@ -1,3 +1,8 @@
+<?php
+session_start();
+include('admin/include/dbConfig.php');
+$db_handle = new DBController();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,24 +58,32 @@
             <div class="row justify-content-center">
                 <div class="col-lg-12">
                     <div class="row gutter-y-30">
+                        <?php
+                        $fetch_product = $db_handle->runQuery("select * from products order by product_id desc");
+                        $no_fetch_product = $db_handle->numRows("select * from products order by product_id desc");
+                        for ($i=0; $i<$no_fetch_product; $i++){
+                        ?>
                         <div class="col-md-6 col-lg-3">
                             <div class="product__item wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
                                 <div class="product__item__img">
-                                    <img src="assets/images/products/product-1-1.jpg" alt="tolak">
+                                    <img src="admin/<?php echo $fetch_product[$i]['main_image'];?>" alt="tolak">
                                     <div class="product__item__btn">
-                                        <a href="Product-Details"><i class="fas fa-eye"></i></a>
+                                        <a href="Product-Details?id=<?php echo $fetch_product[$i]['product_id'];?>"><i class="fas fa-eye"></i></a>
                                     </div>
                                 </div><!-- /.product-image -->
                                 <div class="product__item__content">
                                     <div class="product__item__ratings">
                                         <span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
                                     </div><!-- /.product-ratings -->
-                                    <h4 class="product__item__title"><a href="Product-Details">Boss Sofa</a></h4><!-- /.product-title -->
-                                    <div class="product__item__price">$82.00</div><!-- /.product-price -->
-                                    <a href="Product-Details" class="tolak-btn product__item__link"><b>Details</b><span></span></a>
+                                    <h4 class="product__item__title"><a href="Product-Details?id=<?php echo $fetch_product[$i]['product_id'];?>"><?php echo $fetch_product[$i]['product_name']?></a></h4><!-- /.product-title -->
+                                    <div class="product__item__price"><?php echo $fetch_product[$i]['product_code'];?></div><!-- /.product-price -->
+                                    <a href="Product-Details?id=<?php echo $fetch_product[$i]['product_id'];?>" class="tolak-btn product__item__link"><b>Details</b><span></span></a>
                                 </div><!-- /.product-content -->
                             </div><!-- /.product-item -->
                         </div><!-- /.col-md-6 col-lg-4 -->
+                            <?php
+                        }
+                        ?>
                     </div><!-- /.row -->
                 </div><!-- /.col-lg-9 -->
             </div><!-- /.row -->
