@@ -2,6 +2,7 @@
 session_start();
 include('admin/include/dbConfig.php');
 $db_handle = new DBController();
+date_default_timezone_set("Asia/Dhaka");
 if(isset($_GET['id'])){
     $product = $db_handle->runQuery("select * from products where product_id = {$_GET['id']}");
 }else {
@@ -10,6 +11,26 @@ if(isset($_GET['id'])){
     window.location.href= 'Home';
 </script>
     ";
+}
+
+if(isset($_POST['review'])){
+    $message = $db_handle->checkValue($_POST['message']);
+    $rating = $db_handle->checkValue($_POST['rating']);
+    $inserted_at = date("Y-m-d H:i:s");
+    $review = $db_handle->insertQuery("INSERT INTO `product_review`(`user_id`, `message`, `rating`, `inserted_at`,`product_code`) VALUES ('{$_SESSION['user']}','$message','$rating','$inserted_at','{$_GET['id']}')");
+    if($review){
+        echo "
+        <script>
+        alert('Thanks! Your comment always inspire us.');
+</script>
+        ";
+    } else {
+        echo "
+        <script>
+        alert('Sorry! Something went wrong.');
+</script>
+        ";
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -80,8 +101,27 @@ if(isset($_GET['id'])){
                             <div class="product-details__price"><?php echo $product[0]['product_code'];?></div><!-- /.product-price -->
                         </div>
                         <div class="product-details__review">
-                            <span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
-                            <a href="product-details.html">2 Customer Reviews</a>
+                            <?php
+                            $avg_rating = $db_handle->runQuery("select SUM(rating) as rating from product_review where product_code={$_GET['id']}");
+                            $no_rating = $db_handle->numRows("select * from product_review where product_code = {$_GET['id']}");
+                            $total_rating = $avg_rating[0]['rating'];
+                            $newRating = round($total_rating / $no_rating);
+                            for($p=0; $p<$newRating; $p++){
+                                ?>
+                                <span class="fa fa-star"></span>
+                                <?php
+                            }
+                            $rmn = 5 - $newRating;
+                            for ($q=0; $q < $rmn; $q++){
+                                ?>
+                                <i class="far fa-star"></i>
+                                <?php
+                            }
+                            ?>
+                            <?php
+                            $number_comment = $db_handle->runQuery("SELECT COUNT(id) as no FROM product_review WHERE product_code = '{$_GET['id']}'");
+                            ?>
+                            <a href="#"><?php echo $number_comment[0]['no'];?> Customer Reviews</a>
                         </div><!-- /.review-ratings -->
                         <div class="product-details__divider"></div><!-- /.divider -->
                         <div class="product-details__excerpt">
@@ -105,71 +145,80 @@ if(isset($_GET['id'])){
                 <?php echo $product[0]['long_desc'];?>
             </div>
             <!-- /.product-description -->
+
             <!-- /.product-comment -->
             <div class="product-details__comment wow fadeInUp" data-wow-delay="400ms">
-                <h3 class="product-details__review-title">Comments (2)</h3>
-                <!--Start Comment Box-->
-                <div class="product-details__comment-box">
-                    <figure class="product-details__comment-box__thumb"><img src="assets/images/products/product-c-1-1.jpg" alt="tolak">
-                    </figure><!-- comment-image -->
-                    <h4 class="product-details__comment-box__meta">Kevin martin<span class="product-details__comment-box__date">20 June, 2023 . 4:00 pm</span></h4>
-                    <!-- comment-meta -->
-                    <div class="product-details__comment-box__ratings">
-                        <span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
-                    </div><!-- comment-ratings -->
-                    <p class="product-details__comment-box__text">
-                        It has survived not only five centuries, but also the leap into electronic typesetting unchanged. It
-                        was popularised in the sheets containing lorem ipsum is simply free text. Class aptent taciti
-                        sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum sollicitudin
-                        varius mauris non dignissim.
-                    </p><!-- comment-text -->
-                </div>
-                <!--End Comment Box-->
-                <!--Start Comment Box-->
-                <div class="product-details__comment-box">
-                    <figure class="product-details__comment-box__thumb"><img src="assets/images/products/product-c-1-2.jpg" alt="tolak">
-                    </figure><!-- comment-image -->
-                    <h4 class="product-details__comment-box__meta">Sarah albert<span class="product-details__comment-box__date">20 June, 2023 . 4:00 pm</span></h4>
-                    <!-- comment-meta -->
-                    <div class="product-details__comment-box__ratings">
-                        <span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
-                    </div><!-- comment-ratings -->
-                    <p class="product-details__comment-box__text">
-                        It has survived not only five centuries, but also the leap into electronic typesetting unchanged. It
-                        was popularised in the sheets containing lorem ipsum is simply free text. Class aptent taciti
-                        sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum sollicitudin
-                        varius mauris non dignissim.
-                    </p><!-- comment-text -->
-                </div>
-                <!--End Comment Box-->
+                <h3 class="product-details__review-title">Comments (<?php echo $number_comment[0]['no'];?>)</h3>
+                <?php
+                $fetch_review = $db_handle->runQuery("select * from users, product_review where users.user_id = product_review.user_id and product_review.product_code={$_GET['id']} order by product_review.id desc");
+                $no_fetch_review = $db_handle->numRows("select * from users, product_review where users.user_id = product_review.user_id and product_review.product_code={$_GET['id']} order by product_review.id desc");
+                for ($i=0; $i<$no_fetch_review; $i++){
+                    ?>
+                    <!--Start Comment Box-->
+                    <div class="product-details__comment-box">
+                        <h4 class="product-details__comment-box__meta"><?php echo $fetch_review[$i]['full_name'];?><span class="product-details__comment-box__date">
+                                <?php
+                                echo date_format(new DateTime($fetch_review[$i]['inserted_at']), 'd M, Y');
+                                ?>
+                            </span></h4>
+                        <!-- comment-meta -->
+                        <div class="product-details__comment-box__ratings">
+                            <?php
+                            $rating = $fetch_review[$i]['rating'];
+                            for ($r=1; $r<=$rating; $r++){
+                                ?>
+                                <span class="fa fa-star"></span>
+                                <?php
+                            }
+                            $remain = 5 - $rating;
+                            for ($x=0; $x<$remain; $x++){
+                                ?>
+                                <i class="far fa-star"></i>
+                                <?php
+                            }
+                            ?>
+                        </div><!-- comment-ratings -->
+                        <p class="product-details__comment-box__text">
+                            <?php
+                            echo $fetch_review[$i]['message'];
+                            ?>
+                        </p><!-- comment-text -->
+                    </div>
+                    <!--End Comment Box-->
+                    <?php
+                }
+                ?>
             </div>
             <!-- /.product-comment -->
-            <!-- /.product-comment-form -->
-            <div class="product-details__form wow fadeInUp" data-wow-delay="500ms">
-                <h3 class="product-details__form-title">Add a review</h3>
-                <div class="product-details__form-ratings">
-                    <p class="product-details__form-ratings__label">Rate this product?</p>
-                    <span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
-                </div><!-- review-ratings -->
-                <form class="comments-form__form contact-form-validated product-details__form__form form-one">
-                    <div class="form-one__group">
-                        <div class="form-one__control form-one__control--full">
-                            <textarea name="message" placeholder="Write  a message"></textarea><!-- /# -->
-                        </div><!-- /.form-one__control -->
-                        <div class="form-one__control">
-                            <input type="text" name="name" placeholder="Your name">
-                        </div><!-- /.form-one__control -->
-                        <div class="form-one__control">
-                            <input type="email" name="email" placeholder="Email address">
-                        </div><!-- /.form-one__control -->
-                        <div class="form-one__control form-one__control--full">
-                            <button type="submit" class="tolak-btn"><b>Submit Review</b><span></span></button>
-                        </div><!-- /.form-one__control -->
-                    </div><!-- /.form-one__group -->
-                </form>
-                <div class="result"></div>
-            </div>
-            <!-- /.product-comment-form -->
+
+            <?php
+            if(isset($_SESSION['user'])){
+                ?>
+                <!-- /.product-comment-form -->
+                <div class="product-details__form wow fadeInUp" data-wow-delay="500ms">
+                    <h3 class="product-details__form-title">Add a review</h3>
+                    <div class="product-details__form-ratings">
+                        <p class="product-details__form-ratings__label">Rate this product?</p>
+                    </div><!-- review-ratings -->
+                    <form class="comments-form__form product-details__form__form form-one" action="#" method="post">
+                        <div class="form-one__group">
+                            <div class="form-one__control form-one__control--full">
+                                <textarea name="message" placeholder="Write your opinion about this product" required></textarea><!-- /# -->
+                            </div><!-- /.form-one__control -->
+                            <div class="form-one__control form-one__control--full">
+                                <input type="number" name="rating" placeholder="Rate This product out of 5">
+                            </div><!-- /.form-one__control -->
+                            <div class="form-one__control form-one__control--full">
+                                <button type="submit" class="tolak-btn" name="review"><b>Submit Review</b><span></span></button>
+                            </div><!-- /.form-one__control -->
+                        </div><!-- /.form-one__group -->
+                    </form>
+                    <div class="result"></div>
+                </div>
+                <!-- /.product-comment-form -->
+                <?php
+            }
+            ?>
         </div>
     </section>
     <!-- Products End -->

@@ -2492,6 +2492,7 @@ h6 {
 .form-one .bootstrap-select > .dropdown-toggle,
 .form-one input[type=text],
 .form-one input[type=email],
+.form-one input[type=number],
 .form-one textarea {
   display: block;
   width: 100%;
@@ -9153,7 +9154,6 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 .product-details__comment-box {
   position: relative;
-  padding: 11px 0 64px 212px;
   margin-bottom: 50px;
   min-height: 166px;
   border-bottom: 1px solid var(--tolak-border-color, #dddddd);
@@ -9260,6 +9260,7 @@ body.megamenu-popup-active .mobile-nav__content {
 .product-details__form .form-one .bootstrap-select > .dropdown-toggle,
 .product-details__form .form-one input[type=text],
 .product-details__form .form-one input[type=email],
+.product-details__form .form-one input[type=number],
 .product-details__form .form-one textarea {
   border: 1px solid var(--tolak-border-color, #dddddd);
   color: var(--tolak-text, #636363);

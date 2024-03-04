@@ -1,4 +1,4 @@
-ErrorDocument 404 https://gneiss.com/404.php
+ErrorDocument 404 https://gneisslab.com//404.php
 
 RewriteEngine on
 
