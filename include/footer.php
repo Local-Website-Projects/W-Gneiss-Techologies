@@ -58,19 +58,15 @@ alert('Thank you! From now you will receive all updates from us.');
                         <li><span class="icofont-phone"></span><a href="tel:01705581992">+8801705581992</a></li>
                     </ul>
                     <div class="footer-widget__social">
-                        <a href="https://facebook.com/">
+                        <a href="https://www.facebook.com/profile.php?id=61557041577283">
                             <i class="fab fa-facebook-f" aria-hidden="true"></i>
                             <span class="sr-only">Facebook</span>
                         </a>
-                        <a href="https://pinterest.com/">
-                            <i class="fab fa-pinterest-p" aria-hidden="true"></i>
-                            <span class="sr-only">Pinterest</span>
+                        <a href="https://www.linkedin.com/in/gneiss-technologies-a8a5ab2b8/">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            <span class="sr-only">Linkedin</span>
                         </a>
-                        <a href="https://twitter.com/">
-                            <i class="fab fa-twitter" aria-hidden="true"></i>
-                            <span class="sr-only">Twitter</span>
-                        </a>
-                        <a href="https://instagram.com/">
+                        <a href="https://www.instagram.com/gneiss_technologies/">
                             <i class="fab fa-instagram" aria-hidden="true"></i>
                             <span class="sr-only">Instagram</span>
                         </a>
