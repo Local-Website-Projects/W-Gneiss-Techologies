@@ -13,13 +13,15 @@
                         <!-- /.funfact-one__number -->
                         <p class="funfact-one__item__text">Successflly Trained</p><!-- /.funfact-one__title -->
                     </div><!-- /.funfact-one__item -->
-                    <div class="funfact-one__item funfact-one__item--two count-box tolak-tilt"
-                         data-tilt-options='{ "glare": false, "maxGlare": 0, "maxTilt": 9, "speed": 700, "scale": 1 }'>
-                        <h3 class="funfact-one__item__count"><span class="count-text" data-stop="128"
-                                                                   data-speed="1500"></span>+</h3>
-                        <!-- /.funfact-one__number -->
-                        <p class="funfact-one__item__text">Projects Complited</p><!-- /.funfact-one__title -->
-                    </div><!-- /.funfact-one__item -->
+                    <a href="#" target="_blank">
+                        <div class="funfact-one__item funfact-one__item--two count-box tolak-tilt"
+                             data-tilt-options='{ "glare": false, "maxGlare": 0, "maxTilt": 9, "speed": 700, "scale": 1 }'>
+                            <h3 class="funfact-one__item__count"><span class="count-text" data-stop="128"
+                                                                       data-speed="1500"></span>+</h3>
+                            <!-- /.funfact-one__number -->
+                            <p class="funfact-one__item__text">Projects Complited</p><!-- /.funfact-one__title -->
+                        </div><!-- /.funfact-one__item -->
+                    </a>
                     <div class="funfact-one__item funfact-one__item--three count-box tolak-tilt"
                          data-tilt-options='{ "glare": false, "maxGlare": 0, "maxTilt": 9, "speed": 700, "scale": 1 }'>
                         <h3 class="funfact-one__item__count"><span class="count-text" data-stop="28"

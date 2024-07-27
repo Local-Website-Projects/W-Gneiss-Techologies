@@ -144,12 +144,14 @@ $db_handle = new DBController();
                 <span class="sr-only">Instagram</span>
             </a>
         </div><!-- slider-social -->
-        <div class="main-slider-one__project wow fadeInUp" data-wow-delay="200ms">
-            <div class="main-slider-one__project__icon"><span class="icon-check-mark"></span></div>
-            <h5 class="main-slider-one__project__number count-box"><span class="count-text" data-stop="128"
-                                                                         data-speed="1500"></span>+</h5>
-            <p class="main-slider-one__project__title">Complete Projects</p>
-        </div><!-- slider-social -->
+        <a href="#" target="_blank">
+            <div class="main-slider-one__project wow fadeInUp" data-wow-delay="200ms">
+                <div class="main-slider-one__project__icon"><span class="icon-check-mark"></span></div>
+                <h5 class="main-slider-one__project__number count-box"><span class="count-text" data-stop="128"
+                                                                             data-speed="1500"></span>+</h5>
+                <p class="main-slider-one__project__title">Complete Projects</p>
+            </div><!-- slider-social -->
+        </a>
     </section>
     <!-- main-slider-end -->
 
@@ -257,7 +259,8 @@ $db_handle = new DBController();
                 <div class="col-xl-6 wow fadeInLeft" data-wow-delay="300ms">
                     <div class="about-one__content">
                         <div class="sec-title text-left">
-                            <h6 class="sec-title__tagline"><span class="sec-title__tagline__left"></span> About Us<span class="sec-title__tagline__right"></span></h6><!-- /.sec-title__tagline -->
+                            <h6 class="sec-title__tagline"><span class="sec-title__tagline__left"></span> About Us<span
+                                        class="sec-title__tagline__right"></span></h6><!-- /.sec-title__tagline -->
                             <h3 class="sec-title__title">Gneiss Technology: Pioneering Tomorrow's Connectivity</h3>
                             <!-- /.sec-title__title -->
                         </div><!-- /.sec-title -->
@@ -356,14 +359,17 @@ $db_handle = new DBController();
                         <?php
                         $fetch_product = $db_handle->runQuery("select * from products order by product_id desc limit 12");
                         $no_fetch_product = $db_handle->numRows("select * from products order by product_id desc limit 12");
-                        for ($i=0; $i<$no_fetch_product; $i++){
+                        for ($i = 0; $i < $no_fetch_product; $i++) {
                             ?>
                             <div class="item">
-                                <div class="product__item wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='000ms'>
+                                <div class="product__item wow fadeInUp" data-wow-duration='1500ms'
+                                     data-wow-delay='000ms'>
                                     <div class="product__item__img">
-                                        <img src="admin/<?php echo $fetch_product[$i]['main_image'];?>" alt="Gneiss Technology">
+                                        <img src="admin/<?php echo $fetch_product[$i]['main_image']; ?>"
+                                             alt="Gneiss Technology">
                                         <div class="product__item__btn">
-                                            <a href="Product-Details?id=<?php echo $fetch_product[$i]['product_id'];?>"><i class="fas fa-eye"></i></a>
+                                            <a href="Product-Details?id=<?php echo $fetch_product[$i]['product_id']; ?>"><i
+                                                        class="fas fa-eye"></i></a>
                                         </div>
                                     </div><!-- /.product-image -->
                                     <div class="product__item__content">
@@ -372,10 +378,14 @@ $db_handle = new DBController();
                                                     class="fa fa-star"></span><span class="fa fa-star"></span><span
                                                     class="fa fa-star"></span>
                                         </div><!-- /.product-ratings -->
-                                        <h4 class="product__item__title"><a href="Product-Details?id=<?php echo $fetch_product[$i]['product_id'];?>"><?php echo $fetch_product[$i]['product_name'];?></a></h4>
+                                        <h4 class="product__item__title"><a
+                                                    href="Product-Details?id=<?php echo $fetch_product[$i]['product_id']; ?>"><?php echo $fetch_product[$i]['product_name']; ?></a>
+                                        </h4>
                                         <!-- /.product-title -->
-                                        <div class="product__item__price"><?php echo $fetch_product[$i]['product_code'];?></div><!-- /.product-price -->
-                                        <a href="Product-Details?id=<?php echo $fetch_product[$i]['product_id'];?>" class="tolak-btn product__item__link"><b>Details</b><span></span></a>
+                                        <div class="product__item__price"><?php echo $fetch_product[$i]['product_code']; ?></div>
+                                        <!-- /.product-price -->
+                                        <a href="Product-Details?id=<?php echo $fetch_product[$i]['product_id']; ?>"
+                                           class="tolak-btn product__item__link"><b>Details</b><span></span></a>
                                     </div><!-- /.product-content -->
                                 </div><!-- /.product-item -->
                             </div><!-- /.item -->
@@ -419,7 +429,7 @@ $db_handle = new DBController();
     </section>
     <!-- CTA End -->
 
-    <?php include ('include/faq.php');?>
+    <?php include('include/faq.php'); ?>
     <!-- /.funfact-one -->
 
     <!-- CTA Start -->
@@ -459,7 +469,7 @@ $db_handle = new DBController();
     </section>
     <!-- CTA End -->
 
-    <?php include ('include/team.php');?>
+    <?php include('include/team.php'); ?>
     <!-- /.team-one -->
 
     <section class="our-solution" style="background-image: url(assets/images/backgrounds/solution-bg-1.jpg);">
@@ -489,16 +499,16 @@ $db_handle = new DBController();
                         </p>
                         <div class="row">
                             <p class="our-solution__content__text" style="padding-left: 30px;">
-                                Joining our aeroponics project means becoming part of a collaborative team dedicated to
-                                pushing the boundaries of what is possible in sustainable agriculture. Together, we will
-                                work towards developing solutions that not only increase food production but also
-                                minimize resource usage and environmental impact.
+                                Gneiss Technologies is committed to delivering exceptional value to our customers. We
+                                offer a comprehensive range of electronic products and technology driven services
+                                tailored to meet the diverse needs of our clients. From tech enthusiasts and early
+                                adopters to educational institutions, businesses, and government agencies, we have
+                                solutions for everyone.
                             </p>
                             <p class="our-solution__content__text" style="padding-left: 30px;">
-                                If you are ready to take on a challenge and contribute to a project that has the
-                                potential to reshape the future of farming, then Gneiss Technologies invites you to join
-                                us. Apply now and be a part of this exciting journey towards a more sustainable and
-                                abundant food supply for generations to come.
+                                Our products are designed with a focus on quality, performance, and user experience. We
+                                combine cutting edge technology with elegant design to create products that are both
+                                functional and aesthetically pleasing.
                             </p>
                         </div>
                     </div>
@@ -546,108 +556,13 @@ $db_handle = new DBController();
     <!-- Feature End -->
 
 
-    <?php include ('include/previous_works.php');?>
+    <?php include('include/previous_works.php'); ?>
     <!-- /.project-one -->
 
 
-    <div class="client-carousel ">
-        <div class="container">
-            <div class="client-carousel__one tolak-owl__carousel owl-theme owl-carousel" data-owl-options='{
-            "items": 5,
-            "margin": 30,
-            "smartSpeed": 700,
-            "loop":true,
-            "autoplay": 6000,
-            "nav":false,
-            "dots":false,
-            "navText": ["<span class=\"fa fa-angle-left\"></span>","<span class=\"fa fa-angle-right\"></span>"],
-            "responsive":{
-                "0":{
-                    "items":1
-                },
-                "360":{
-                    "items":2
-                },
-                "575":{
-                    "items":3
-                },
-                "768":{
-                    "items":3
-                },
-                "992":{
-                    "items": 4
-                },
-                "1200":{
-                    "items": 5
-                }
-            }
-            }'>
-                <div class="client-carousel__one__item">
-                    <img class="client-carousel__one__item__normal" src="assets/images/resources/brand-1-1.png"
-                         alt="tolak">
-                    <img class="client-carousel__one__item__hover" src="assets/images/resources/brand-1-1-hover.png"
-                         alt="tolak">
-                </div><!-- /.owl-slide-item-->
-                <div class="client-carousel__one__item">
-                    <img class="client-carousel__one__item__normal" src="assets/images/resources/brand-1-1.png"
-                         alt="tolak">
-                    <img class="client-carousel__one__item__hover" src="assets/images/resources/brand-1-1-hover.png"
-                         alt="tolak">
-                </div><!-- /.owl-slide-item-->
-                <div class="client-carousel__one__item">
-                    <img class="client-carousel__one__item__normal" src="assets/images/resources/brand-1-1.png"
-                         alt="tolak">
-                    <img class="client-carousel__one__item__hover" src="assets/images/resources/brand-1-1-hover.png"
-                         alt="tolak">
-                </div><!-- /.owl-slide-item-->
-                <div class="client-carousel__one__item">
-                    <img class="client-carousel__one__item__normal" src="assets/images/resources/brand-1-1.png"
-                         alt="tolak">
-                    <img class="client-carousel__one__item__hover" src="assets/images/resources/brand-1-1-hover.png"
-                         alt="tolak">
-                </div><!-- /.owl-slide-item-->
-                <div class="client-carousel__one__item">
-                    <img class="client-carousel__one__item__normal" src="assets/images/resources/brand-1-1.png"
-                         alt="tolak">
-                    <img class="client-carousel__one__item__hover" src="assets/images/resources/brand-1-1-hover.png"
-                         alt="tolak">
-                </div><!-- /.owl-slide-item-->
-                <div class="client-carousel__one__item">
-                    <img class="client-carousel__one__item__normal" src="assets/images/resources/brand-1-1.png"
-                         alt="tolak">
-                    <img class="client-carousel__one__item__hover" src="assets/images/resources/brand-1-1-hover.png"
-                         alt="tolak">
-                </div><!-- /.owl-slide-item-->
-                <div class="client-carousel__one__item">
-                    <img class="client-carousel__one__item__normal" src="assets/images/resources/brand-1-1.png"
-                         alt="tolak">
-                    <img class="client-carousel__one__item__hover" src="assets/images/resources/brand-1-1-hover.png"
-                         alt="tolak">
-                </div><!-- /.owl-slide-item-->
-                <div class="client-carousel__one__item">
-                    <img class="client-carousel__one__item__normal" src="assets/images/resources/brand-1-1.png"
-                         alt="tolak">
-                    <img class="client-carousel__one__item__hover" src="assets/images/resources/brand-1-1-hover.png"
-                         alt="tolak">
-                </div><!-- /.owl-slide-item-->
-                <div class="client-carousel__one__item">
-                    <img class="client-carousel__one__item__normal" src="assets/images/resources/brand-1-1.png"
-                         alt="tolak">
-                    <img class="client-carousel__one__item__hover" src="assets/images/resources/brand-1-1-hover.png"
-                         alt="tolak">
-                </div><!-- /.owl-slide-item-->
-                <div class="client-carousel__one__item">
-                    <img class="client-carousel__one__item__normal" src="assets/images/resources/brand-1-1.png"
-                         alt="tolak">
-                    <img class="client-carousel__one__item__hover" src="assets/images/resources/brand-1-1-hover.png"
-                         alt="tolak">
-                </div><!-- /.owl-slide-item-->
-            </div><!-- /.thm-owl__slider -->
-        </div><!-- /.container -->
-    </div>
     <!-- /.client-carousel -->
 
-    <?php include ('include/contact_form.php');?>
+    <?php include('include/contact_form.php'); ?>
     <!-- /.contact -->
 
     <section class="blog-one">
@@ -682,16 +597,18 @@ $db_handle = new DBController();
                 <?php
                 $fetch_blog = $db_handle->runQuery("select * from blog order by blog_id desc limit 8");
                 $no_fetch_blog = $db_handle->numRows("select * from blog order by blog_id desc limit 8");
-                for ($i=0; $i<$no_fetch_blog; $i++){
+                for ($i = 0; $i < $no_fetch_blog; $i++) {
                     ?>
                     <div class="item">
                         <div class="blog-card wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='00ms'>
                             <div class="blog-card__image">
-                                <img src="admin/<?php echo $fetch_blog[$i]['file'];?>"
+                                <img src="admin/<?php echo $fetch_blog[$i]['file']; ?>"
                                      alt="Blog">
-                                <img src="admin/<?php echo $fetch_blog[$i]['file'];?>"
+                                <img src="admin/<?php echo $fetch_blog[$i]['file']; ?>"
                                      alt="Blog">
-                                <a href="Details?id=<?php echo $fetch_blog[$i]['blog_id'];?>" class="blog-card__image__link"><span class="sr-only"><?php echo $fetch_blog[$i]['title'];?></span>
+                                <a href="Details?id=<?php echo $fetch_blog[$i]['blog_id']; ?>"
+                                   class="blog-card__image__link"><span
+                                            class="sr-only"><?php echo $fetch_blog[$i]['title']; ?></span>
                                     <!-- /.sr-only --></a>
                             </div><!-- /.blog-card__image -->
                             <div class="blog-card__bg"></div>
@@ -701,15 +618,19 @@ $db_handle = new DBController();
                                 $month = date_format(new DateTime($fetch_blog[$i]['date']), 'M');
                                 $year = date_format(new DateTime($fetch_blog[$i]['date']), 'Y');
                                 ?>
-                                <div class="blog-card__meta__date"><span><?php echo $date;?></span><?php echo $month;?></div><!-- /.blog-card__date -->
-                                <div class="blog-card__meta__year"><?php echo $year;?></div><!-- /.blog-card__yarn -->
+                                <div class="blog-card__meta__date">
+                                    <span><?php echo $date; ?></span><?php echo $month; ?></div>
+                                <!-- /.blog-card__date -->
+                                <div class="blog-card__meta__year"><?php echo $year; ?></div><!-- /.blog-card__yarn -->
                             </div>
                             <div class="blog-card__content">
-                                <h3 class="blog-card__title"><a href="Details?id=<?php echo $fetch_blog[$i]['blog_id'];?>"><?php echo $fetch_blog[$i]['title'];?></a></h3><!-- /.blog-card__title -->
+                                <h3 class="blog-card__title"><a
+                                            href="Details?id=<?php echo $fetch_blog[$i]['blog_id']; ?>"><?php echo $fetch_blog[$i]['title']; ?></a>
+                                </h3><!-- /.blog-card__title -->
                                 <p class="blog-card__text"><?php
-                                    echo substr($fetch_blog[$i]['description'],0, 100);
+                                    echo substr($fetch_blog[$i]['description'], 0, 100);
                                     ?>...</p><!-- /.blog-card__text -->
-                                <a href="Details?id=<?php echo $fetch_blog[$i]['blog_id'];?>" class="blog-card__link">
+                                <a href="Details?id=<?php echo $fetch_blog[$i]['blog_id']; ?>" class="blog-card__link">
                                     Read more
                                     <i class="icofont-rounded-double-right"></i>
                                 </a><!-- /.blog-card__link -->
@@ -732,18 +653,17 @@ $db_handle = new DBController();
 </div><!-- /.page-wrapper -->
 
 
-<?php include ('include/mobile_nav.php');?>
+<?php include('include/mobile_nav.php'); ?>
 <!-- /.mobile-nav__wrapper -->
 
-<?php include ('include/search_popup.php');?>
+<?php include('include/search_popup.php'); ?>
 <!-- /.search-popup -->
 
 
+<?php include('include/back_top.php'); ?>
 
-<?php include ('include/back_top.php');?>
 
-
-<?php include ('include/js.php');?>
+<?php include('include/js.php'); ?>
 </body>
 
 </html>
