@@ -92,6 +92,7 @@ if(isset($_POST['add_blog'])){
 if(isset($_POST['add_work'])){
     $title = $db_handle->checkValue($_POST['title']);
     $description = $db_handle->checkValue($_POST['description']);
+    $long_desc = $db_handle->checkValue($_POST['long_desc']);
     $image = '';
     if (!empty($_FILES['work_image']['name'])) {
         $RandomAccountNumber = mt_rand(1, 99999);
@@ -112,7 +113,7 @@ if(isset($_POST['add_work'])){
             $image = "public/images/works/" . $file_name;
         }
     }
-    $work = $db_handle->insertQuery("INSERT INTO `previous_works`(`title`, `small_desc`, `file`, `inserted_at`) VALUES ('$title','$description','$image','$inserted_at')");
+    $work = $db_handle->insertQuery("INSERT INTO `previous_works`(`title`, `small_desc`,`long_desc`, `file`, `inserted_at`) VALUES ('$title','$description','$long_desc','$image','$inserted_at')");
     if($work){
         echo "<script>
                 document.cookie = 'alert = 4;';

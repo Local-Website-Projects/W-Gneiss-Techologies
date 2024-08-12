@@ -104,8 +104,12 @@ if(isset($_POST['review'])){
                             <?php
                             $avg_rating = $db_handle->runQuery("select SUM(rating) as rating from product_review where product_code={$_GET['id']}");
                             $no_rating = $db_handle->numRows("select * from product_review where product_code = {$_GET['id']}");
-                            $total_rating = $avg_rating[0]['rating'];
-                            $newRating = round($total_rating / $no_rating);
+                            if($no_rating > 0){
+                                $total_rating = $avg_rating[0]['rating'];
+                                $newRating = round($total_rating / $no_rating);
+                            } else {
+                                $newRating = 0;
+                            }
                             for($p=0; $p<$newRating; $p++){
                                 ?>
                                 <span class="fa fa-star"></span>

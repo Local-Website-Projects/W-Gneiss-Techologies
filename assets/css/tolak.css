@@ -10577,7 +10577,7 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 .pricing-one__card__price {
   color: var(--tolak-black2, #222222);
-  font-size: 43px;
+  font-size: 32px;
   margin: 0 0 33px;
   transition: 300ms ease;
 }

@@ -156,99 +156,163 @@ $db_handle = new DBController();
     <!-- main-slider-end -->
 
     <!-- Feature Start -->
-    <section class="feature-one">
-        <div class="feature-one__bg"></div>
-        <div class="container">
-            <div class="sec-title text-center">
-                <h6 class="sec-title__tagline"><span class="sec-title__tagline__left"></span>Our Company Status<span
-                            class="sec-title__tagline__right"></span></h6><!-- /.sec-title__tagline -->
-                <h3 class="sec-title__title">The Success of our Solution</h3><!-- /.sec-title__title -->
-            </div><!-- /.sec-title -->
-            <div class="feature-one__carousel tolak-owl__carousel tolak-owl__carousel--with-shadow tolak-owl__carousel--basic-nav owl-carousel owl-theme"
-                 data-owl-options='{
-			"items": 4,
-			"margin": 30,
-			"loop": false,
-			"smartSpeed": 700,
-			"nav": false,
-			"navText": ["<span class=\"fa fa-angle-left\"></span>","<span class=\"fa fa-angle-right\"></span>"],
-			"dots": true,
-			"autoplay": false,
-			"responsive": {
-				"0": {
-					"items": 1
-				},
-				"768": {
-					"items": 3
-				},
-				"992": {
-					"items": 3
-				},
-				"1200": {
-					"items": 4
-				}
-			}
-			}'>
-                <div class="item">
-                    <div class="feature-one__item text-center wow fadeInUp" data-wow-delay="100ms">
-                        <div class="feature-one__item__top-ball"><img src="assets/images/shapes/feature-1-ball.png"
-                                                                      alt="tolak"></div>
-                        <div class="feature-one__item__icon">
-                            <span class="icon-customer-service"></span>
-                        </div>
-                        <h4 class="feature-one__item__title"><a href="Services">Service</a></h4>
-                        <p class="feature-one__item__text">we are offer customizable solutions designed to meet your
+    <section class="pricing-one">
+        <div class="container-fluid">
+            <div class="sec-title-two text-center">
+                <h6 class="sec-title-two__tagline"><span class="sec-title-two__tagline__left icofont-rounded-double-left"></span>Our Company Status<span class="sec-title-two__tagline__right icofont-rounded-double-right"></span></h6><!-- /.sec-title-two__tagline -->
+                <h3 class="sec-title-two__title">The Success of our Solution</h3><!-- /.sec-title-two__title -->
+            </div><!-- /.sec-title-two -->
+            <div class="row gutter-y-30">
+                <div class="col-md-12 col-lg-3 wow fadeInUp animated" data-wow-delay="00ms" style="visibility: visible; animation-delay: 0ms; animation-name: fadeInUp;">
+                    <div class="pricing-one__card text-center">
+                        <div class="pricing-one__card__icon">
+                            <i class="icon-customer-service"></i>
+                        </div><!-- /.pricing-one__card__icon -->
+                        <h3 class="pricing-one__card__price">Service</h3>
+                        <p>we are offering customizable solutions designed to meet your
                             specific requirements.</p>
-                        <div class="feature-one__item__year">2020</div>
-                        <div class="feature-one__item__bottom-ball"></div>
-                    </div><!-- feature-item -->
-                </div>
-                <div class="item">
-                    <div class="feature-one__item text-center wow fadeInUp" data-wow-delay="150ms">
-                        <div class="feature-one__item__top-ball"><img src="assets/images/shapes/feature-1-ball.png"
-                                                                      alt="tolak"></div>
-                        <div class="feature-one__item__icon">
-                            <span class="icon-shopping-cart"></span>
-                        </div>
-                        <h4 class="feature-one__item__title"><a href="Shop">Shop</a></h4>
-                        <p class="feature-one__item__text">Explore our curated collection of premium. products to
+                        <a href="Services" class="tolak-btn"><b>Get Started</b><span></span></a>
+                    </div><!-- /.pricing-one__card -->
+                </div><!-- /.col-md-12 col-lg-4 -->
+                <div class="col-md-12 col-lg-3 wow fadeInUp animated" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
+                    <div class="pricing-one__card text-center">
+                        <div class="pricing-one__card__icon">
+                            <i class="icon-shopping-cart"></i>
+                        </div><!-- /.pricing-one__card__icon -->
+                        <h3 class="pricing-one__card__price">Shop</h3><!-- /.pricing-one__card__price -->
+                        <p>Explore our curated collection of premium. products to
                             elevate your everyday life. Shop now and redefine your lifestyle with us!</p>
-                        <div class="feature-one__item__year">2021</div>
-                        <div class="feature-one__item__bottom-ball"></div>
-                    </div><!-- feature-item -->
-                </div>
-                <div class="item">
-                    <div class="feature-one__item text-center wow fadeInUp" data-wow-delay="200ms">
-                        <div class="feature-one__item__top-ball"><img src="assets/images/shapes/feature-1-ball.png"
-                                                                      alt="tolak"></div>
-                        <div class="feature-one__item__icon">
-                            <span class="icon-check-mark"></span>
-                        </div>
-                        <h4 class="feature-one__item__title"><a href="Courses">Courses</a></h4>
-                        <p class="feature-one__item__text">Empower Your Future with Cutting-Edge Electronics: Enroll in
+                        <a href="Shop" class="tolak-btn"><b>Get Started</b><span></span></a>
+                    </div><!-- /.pricing-one__card -->
+                </div><!-- /.col-md-12 col-lg-4 -->
+                <div class="col-md-12 col-lg-3 wow fadeInUp animated" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
+                    <div class="pricing-one__card text-center">
+                        <div class="pricing-one__card__icon">
+                            <i class="icon-check-mark"></i>
+                        </div><!-- /.pricing-one__card__icon -->
+                        <h3 class="pricing-one__card__price">Courses</h3><!-- /.pricing-one__card__price -->
+                        <p>Empower Your Future with Cutting-Edge Electronics: Enroll in
                             Our Dynamic Course Today!</p>
-                        <div class="feature-one__item__year">2022</div>
-                        <div class="feature-one__item__bottom-ball"></div>
-                    </div><!-- feature-item -->
-                </div>
-                <div class="item">
-                    <div class="feature-one__item text-center wow fadeInUp" data-wow-delay="300ms">
-                        <div class="feature-one__item__top-ball"><img src="assets/images/shapes/feature-1-ball.png"
-                                                                      alt="tolak"></div>
-                        <div class="feature-one__item__icon">
-                            <span class="icon-advertisement"></span>
-                        </div>
-                        <h4 class="feature-one__item__title"><a href="Blog">Blog</a></h4>
-                        <p class="feature-one__item__text">Unlock the doors to knowledge with our educational blog
+                        <a href="Courses" class="tolak-btn"><b>Get Started</b><span></span></a>
+                    </div><!-- /.pricing-one__card -->
+                </div><!-- /.col-md-12 col-lg-4 -->
+                <div class="col-md-12 col-lg-3 wow fadeInUp animated" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
+                    <div class="pricing-one__card text-center">
+                        <div class="pricing-one__card__icon">
+                            <i class="icon-advertisement"></i>
+                        </div><!-- /.pricing-one__card__icon -->
+                        <h3 class="pricing-one__card__price">Blog</h3><!-- /.pricing-one__card__price -->
+                        <p>Unlock the doors to knowledge with our educational blog
                             section Explore a treasure trave of insights, tips, and resources curated to fuel your
                             learning journey</p>
-                        <div class="feature-one__item__year">2023</div>
-                        <div class="feature-one__item__bottom-ball"></div>
-                    </div><!-- feature-item -->
+                        <a href="Blog" class="tolak-btn"><b>Get Started</b><span></span></a>
+                    </div><!-- /.pricing-one__card -->
+                </div><!-- /.col-md-12 col-lg-4 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section>
+
+    <!-- Service Start -->
+    <section class="service-one">
+        <div class="container">
+            <div class="sec-title-two text-center">
+                <h6 class="sec-title-two__tagline"><span class="sec-title-two__tagline__left icofont-rounded-double-left"></span>Our Best Service<span class="sec-title-two__tagline__right icofont-rounded-double-right"></span></h6><!-- /.sec-title-two__tagline -->
+                <h3 class="sec-title-two__title">We Leadership This Service</h3><!-- /.sec-title-two__title -->
+            </div><!-- /.sec-title-two -->
+            <div class="row gutter-y-30">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                    <div class="service-one__item text-center">
+                        <div class="service-one__item__image">
+                            <img src="assets/images/resources/service-1-3.jpg" alt="tolak">
+                        </div>
+                        <div class="service-one__item__content">
+                            <div class="service-one__item__icon">
+                                <span class="icon-headhunter"></span>
+                            </div><!-- /.service-icon -->
+                            <h3 class="service-one__item__title">
+                                <a href="marketing-solution.html">Markting of Solution</a>
+                            </h3><!-- /.service-title -->
+                            <p class="service-one__item__text">
+                                We businesss standard chunk of Ipsum used since is Agency & Star tup.
+                            </p><!-- /.service-text -->
+                        </div>
+                        <div class="service-one__item__bottom">
+                            <div class="service-one__item__bottom__number"></div>
+                            <a class="service-one__item__bottom__rm" href="marketing-solution.html">Read More<span class="fas fa-angle-double-right"></span></a>
+                        </div>
+                    </div><!-- /.service-card-one -->
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="250ms">
+                    <div class="service-one__item text-center">
+                        <div class="service-one__item__image">
+                            <img src="assets/images/resources/service-1-4.jpg" alt="tolak">
+                        </div>
+                        <div class="service-one__item__content">
+                            <div class="service-one__item__icon">
+                                <span class="icon-agency"></span>
+                            </div><!-- /.service-icon -->
+                            <h3 class="service-one__item__title">
+                                <a href="technology-services.html">Technology Services</a>
+                            </h3><!-- /.service-title -->
+                            <p class="service-one__item__text">
+                                We businesss standard chunk of Ipsum used since is Agency & Star tup.
+                            </p><!-- /.service-text -->
+                        </div>
+                        <div class="service-one__item__bottom">
+                            <div class="service-one__item__bottom__number"></div>
+                            <a class="service-one__item__bottom__rm" href="technology-services.html">Read More<span class="fas fa-angle-double-right"></span></a>
+                        </div>
+                    </div><!-- /.service-card-one -->
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                    <div class="service-one__item text-center">
+                        <div class="service-one__item__image">
+                            <img src="assets/images/resources/service-1-5.jpg" alt="tolak">
+                        </div>
+                        <div class="service-one__item__content">
+                            <div class="service-one__item__icon">
+                                <span class="icon-advertisig-agency"></span>
+                            </div><!-- /.service-icon -->
+                            <h3 class="service-one__item__title">
+                                <a href="business-marketing.html">Marketing Business</a>
+                            </h3><!-- /.service-title -->
+                            <p class="service-one__item__text">
+                                We businesss standard chunk of Ipsum used since is Agency & Star tup.
+                            </p><!-- /.service-text -->
+                        </div>
+                        <div class="service-one__item__bottom">
+                            <div class="service-one__item__bottom__number"></div>
+                            <a class="service-one__item__bottom__rm" href="business-marketing.html">Read More<span class="fas fa-angle-double-right"></span></a>
+                        </div>
+                    </div><!-- /.service-card-one -->
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="350ms">
+                    <div class="service-one__item text-center">
+                        <div class="service-one__item__image">
+                            <img src="assets/images/resources/service-1-6.jpg" alt="tolak">
+                        </div>
+                        <div class="service-one__item__content">
+                            <div class="service-one__item__icon">
+                                <span class="icon-management"></span>
+                            </div><!-- /.service-icon -->
+                            <h3 class="service-one__item__title">
+                                <a href="business-support.html">Support of Business</a>
+                            </h3><!-- /.service-title -->
+                            <p class="service-one__item__text">
+                                We businesss standard chunk of Ipsum used since is Agency & Star tup.
+                            </p><!-- /.service-text -->
+                        </div>
+                        <div class="service-one__item__bottom">
+                            <div class="service-one__item__bottom__number"></div>
+                            <a class="service-one__item__bottom__rm" href="business-support.html">Read More<span class="fas fa-angle-double-right"></span></a>
+                        </div>
+                    </div><!-- /.service-card-one -->
                 </div>
             </div>
         </div>
     </section>
+    <!-- Service End -->
+
     <!-- Feature End -->
 
     <section class="about-one">

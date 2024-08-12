@@ -11,9 +11,9 @@ class DBController {
     function __construct() {
         if($_SERVER['SERVER_NAME']=="www.gneisslab.com"||$_SERVER['SERVER_NAME']=="gneisslab.com"){
             $this->host = "localhost";
-            $this->user = "u550537652_gneiss";
-            $this->password = "8N[nzy@ri";
-            $this->database = "u550537652_gneiss";
+            $this->user = "up3y8uzgvdd9g";
+            $this->password = "@j3Qb1Rc%u+5";
+            $this->database = "dbwrqlpxrz6vtb";
         }
 
         $this->conn = $this->connectDB();

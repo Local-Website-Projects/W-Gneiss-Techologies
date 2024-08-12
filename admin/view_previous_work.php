@@ -12,6 +12,7 @@ $db_handle = new DBController();
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>View Previous Works - Gneiss Technology</title>
     <?php include('include/css.php'); ?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.21.0/ckeditor.js" integrity="sha512-ff67djVavIxfsnP13CZtuHqf7VyX62ZAObYle+JlObWZvS4/VQkNVaFBOO6eyx2cum8WtiZ0pqyxLCQKC7bjcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
 <?php include('include/preloader.php'); ?>
@@ -44,6 +45,9 @@ $db_handle = new DBController();
                                             </div>
                                             <div class="form-group">
                                                 <input class="form-control" name="description" value = "<?php echo $fwork[0]['small_desc'];?>">
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" name="long_desc"><?php echo $fwork[0]['long_desc'];?></textarea>
                                             </div>
                                             <div class="custom-file">
                                                 <input type="file" class="custom-file-input" name="work_image">
@@ -181,6 +185,7 @@ $db_handle = new DBController();
             }
         })
     }
+    CKEDITOR.replace('long_desc');
 </script>
 </body>
 

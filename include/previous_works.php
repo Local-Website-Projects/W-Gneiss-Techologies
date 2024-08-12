@@ -46,7 +46,7 @@
                         </div>
                         <div class="project-one__item__content">
                             <div class="project-one__item__number"></div>
-                            <h3 class="project-one__item__title"><a href="#"><?php echo $fetch_work[$i]['title'];?></a>
+                            <h3 class="project-one__item__title"><a href="Project-Details?id=<?php echo $fetch_work[$i]['id'];?>"><?php echo $fetch_work[$i]['title'];?></a>
                             </h3>
                             <p class="project-one__item__text">
                                 <?php echo $fetch_work[$i]['small_desc'];?>
